@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Player</title>
+</head>
+<body>
+    <h1>Create a new player</h1>
+    <form action="/player-created" method="post">
+        <div class="form-field">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-field">
+            <label for="top">Top Rating: </label>
+            <input type="text" name="top" id="top" class="form-role" required>
+        </div>
+        <div class="form-field">
+            <label for="jung">Jungle Rating: </label>
+            <input type="text" name="jung" id="jung" class="form-role" required>
+        </div>
+        <div class="form-field">
+            <label for="mid">Mid Rating: </label>
+            <input type="text" name="mid" id="mid" class="form-role" equired>
+        </div>
+        <div class="form-field">
+            <label for="adc">ADC Rating: </label>
+            <input type="text" name="adc" id="adc" class="form-role" equired>
+        </div>
+        <div class="form-field">
+            <label for="sup">Support Rating: </label>
+            <input type="text" name="sup" id="sup" class="form-role" equired>
+        </div>
+
+        <br>
+
+        <div class="form-field">
+            <label for="name">Authentication: </label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <input type="submit" value="Create Player">
+    </form>
+    <div class="player-pool">
+        <!-- displays players from database -->
+    </div>
+</body>
+</html>
