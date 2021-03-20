@@ -5,5 +5,24 @@
     "express": "^4.17.1",
     "nedb": "^1.8.0",
     "path": "^0.12.7"
-  }
+  },
+  "name": "inthouse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteomiceli/inhouse_O_clock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matteomiceli/inhouse_O_clock/issues"
+  },
+  "homepage": "https://github.com/matteomiceli/inhouse_O_clock#readme",
+  "description": ""
 }

@@ -5,11 +5,10 @@ const port = 8080; // default port to listen
 const db = require('./database');
 
 // load database
-db.loadDatabase(function (err) {   // Callback is optional
-    // Now commands will be executed
-  });
-  
+db.loadDatabase();
 
+  
+console.log(db.
 // views engine
 app.set( "views", path.join( __dirname, "views" ) );
 app.set( "view engine", "ejs" );
@@ -20,7 +19,10 @@ app.get( "/", ( req, res ) => {
 } );
 
 app.get( "/new-game", ( req, res ) => {
-    res.render( "new-game" );
+    db.find({}, (err, data) => {
+        
+    })
+    res.render( "new-game", { data:  } );
 } );
 
 // start the Express server
