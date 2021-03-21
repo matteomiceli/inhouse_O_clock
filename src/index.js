@@ -32,7 +32,8 @@ app.get( "/error-auth", (req, res) => {
 })
 
 app.post( "/player-created", (req, res) => {
-    console.log(req.body);
+    playerModel(req.body);
+    
     res.render("player-created");
 })
 
