@@ -7,7 +7,15 @@
     <title>Player Created</title>
 </head>
 <body>
-    <p>Player successfully created!</p>
+    <h2>Player successfully created!</h2>
+    <p><b>Name:</b> <%= player.name %> </p> 
+    <p><b>Summoner Name:</b> <%= player.alias %> </p> 
+    <p><b>Top Rating:</b> <%= player.posRatings.top %> </p> 
+    <p><b>Jungle Rating:</b> <%= player.posRatings.jung %> </p> 
+    <p><b>Middle Rating:</b> <%= player.posRatings.mid %> </p>
+    <p><b>ADC Rating:</b> <%= player.posRatings.adc %> </p>
+    <p><b>Support Rating:</b> <%= player.posRatings.sup %> </p>
+
     <a href="/">Go Back Home</a>
     <br>
     <a href="/new-player">Add Another Player</a>
