@@ -4,6 +4,7 @@ const app = express();
 const port = 8080; // default port to listen
 const db = require('./database');
 const Player = require('../models/playerModel');
+const { stringify } = require('querystring');
 
 // views engine
 app.set( "views", path.join( __dirname, "views" ) );
@@ -23,20 +24,22 @@ app.get( "/", ( req, res ) => {
 // game creation
 app.get( "/new-game", ( req, res ) => {
     db.find({}, (err, data) => {
-        res.render( "new-game");
+        let players = (data);
+        // res.json(data)
+        res.render( "new-game", { players: players });
     })
 });
 
 
 // player creation
 app.post( "/player-created", (req, res) => {
-    let player = new Player(req.body); 
+    let player = new Player(req.body);
     if (player.getAuth()) {
         player.pushToDb();
         res.render("player-created", { player: player });
         return;
     }
-        res.render('error-auth');
+        res.render('error-auth')
 })
 
 

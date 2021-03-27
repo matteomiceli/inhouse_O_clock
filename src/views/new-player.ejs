@@ -10,39 +10,33 @@
     <h1>Create a new player</h1>
     <form action="/player-created" method="post">
         <div class="form-field">
-            <label for="name">Name: </label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="name" placeholder="Name" required>
         </div>
         <div class="form-field">
-            <label for="alias">Summoner Name: </label>
-            <input type="text" name="alias" id="alias" required>
+            <input type="text" name="alias" id="alias" placeholder="Summoner Name" required >
         </div>
         <div class="form-field">
-            <label for="top">Top Rating: </label>
-            <input type="text" name="top" id="top" class="form-role" required>
+            <label for="top">Ratings: </label>
+            <br>
+            <input type="text" name="top" id="top" class="form-role" placeholder="Top" required>
         </div>
         <div class="form-field">
-            <label for="jung">Jungle Rating: </label>
-            <input type="text" name="jung" id="jung" class="form-role" required>
+            <input type="text" name="jung" id="jung" class="form-role" placeholder="Jungle" required>
         </div>
         <div class="form-field">
-            <label for="mid">Mid Rating: </label>
-            <input type="text" name="mid" id="mid" class="form-role" equired>
+            <input type="text" name="mid" id="mid" class="form-role" placeholder="Middle" equired>
         </div>
         <div class="form-field">
-            <label for="adc">ADC Rating: </label>
-            <input type="text" name="adc" id="adc" class="form-role" equired>
+            <input type="text" name="adc" id="adc" class="form-role" placeholder="ADC" equired>
         </div>
         <div class="form-field">
-            <label for="sup">Support Rating: </label>
-            <input type="text" name="sup" id="sup" class="form-role" equired>
+            <input type="text" name="sup" id="sup" class="form-role" placeholder="Support" equired>
         </div>
 
         <br>
 
         <div class="form-field">
-            <label for="name">Authentication: </label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
         </div>
         <input type="submit" value="Create Player">
     </form>
