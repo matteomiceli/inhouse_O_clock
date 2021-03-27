@@ -57,6 +57,7 @@ class Player {
 
 module.exports =  Player;
 
+// received from form
 // {
 //     name: 'asd',
 //     top: '1',

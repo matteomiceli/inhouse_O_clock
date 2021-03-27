@@ -36,7 +36,7 @@ app.post( "/player-created", (req, res) => {
         res.render("player-created", { player: player });
         return;
     }
-        res.render('error-auth')
+        res.render('error-auth');
 })
 
 
