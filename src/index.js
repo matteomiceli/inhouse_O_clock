@@ -13,6 +13,7 @@ app.set( "view engine", "ejs" );
 // body parsing
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(express.static(__dirname + '/public'));
 
 
 
@@ -24,7 +25,7 @@ app.get( "/", ( req, res ) => {
 // game creation
 app.get( "/new-game", ( req, res ) => {
     db.find({}, (err, data) => {
-        let players = (data);
+        let players = data;
         // res.json(data)
         res.render( "new-game", { players: players });
     })

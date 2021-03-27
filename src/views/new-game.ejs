@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
     <title>Create Game</title>
 </head>
 <body>
@@ -16,7 +17,29 @@
         </div>
         <div class="player-pool">
             <table class="player-pool-table">
-                <p><%= players %></p>
+                <thead>
+                    <tr>
+                        <th>Summoner</th>
+                        <th>Top</th>
+                        <th>Jungle</th>
+                        <th>Mid</th>
+                        <th>ADC</th>
+                        <th>Support</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(i=0; i < players.length; i++) { %>
+                        <tr>
+                          <td><%= players[i].alias %></td>
+                          <td><%= players[i].posRatings.top %></td>
+                          <td><%= players[i].posRatings.jung %></td>
+                          <td><%= players[i].posRatings.mid %></td>
+                          <td><%= players[i].posRatings.adc%></td>
+                          <td><%= players[i].posRatings.sup %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+                
             </table>
         </div>
     </div>
