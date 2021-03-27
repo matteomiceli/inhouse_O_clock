@@ -9,6 +9,7 @@ class Player {
     alias;
     posRatings;
     wins;
+    losses;
     #password = 'tf';
     #auth = true;
 
@@ -26,6 +27,7 @@ class Player {
                 sup: req.sup
             }
             this.wins = 0;
+            this.losses = 0;
             return;
         }
         this.#auth = false;
@@ -33,21 +35,6 @@ class Player {
 
     getAuth() {
         return this.#auth;
-    }
-
-    setName(req) {
-        if (req.password === this.#password) {
-            this.name = req.name;
-            this.#auth = true;
-        } 
-        this.#auth = false;
-    }
-
-    setTop(req) {
-        if (req.password === this.#password) {
-            this.posRatings.top == req.top;
-        } 
-        return false;
     }
 
     pushToDb () {
