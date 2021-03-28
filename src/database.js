@@ -1,5 +1,5 @@
 var Datastore = require('nedb')
-  let db = new Datastore({ filename: './players.db' });
+  let db = new Datastore({ filename: './src/players.db' });
 
 
   // load database
