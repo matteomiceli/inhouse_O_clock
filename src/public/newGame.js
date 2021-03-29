@@ -2,7 +2,7 @@
 // so score can be returned -- click event to retrieve prev
 // value
 
-$('select').on('click', (e) => {
+$('select').on('click', (e) => { // use .data to pass in prev val to next function
     origVal = e.target.value;
     console.log(origVal)
 }); 
@@ -36,6 +36,7 @@ function updateTotals(cell, team) {
 
      if (!currentRedTotal.html() == '') {
          if (cell.html() != '') {
+             // subtract prev value before adding new sel value
             let total = parseInt(currentRedTotal.html());
             currentRedTotal.html(total + parseInt(cell.html()));
          } else {
