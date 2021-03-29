@@ -34,7 +34,7 @@ function updateTotals(cell, team) {
      let currentRedTotal = $('#red-total-score');
      let bluTotal = $('#blu-total-score');
 
-     if (!currentRedTotal.html() == '') {
+     if (currentRedTotal.html() != '') {
          if (cell.html() != '') {
              // subtract prev value before adding new sel value
             let total = parseInt(currentRedTotal.html());
