@@ -10,7 +10,13 @@ $('select').on('change', (e) => {
             position: position
         },
         function (data) {
-            console.log(data);
+            let score = data.score;
+            let roleTarget = e.target.name;
+            console.log(roleTarget)
+
+            let scoreCell = $("#" + roleTarget + '-score');
+            scoreCell.html(score)
+            console.log(scoreCell);
         }
     )
 })
