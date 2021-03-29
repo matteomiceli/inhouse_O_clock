@@ -11,12 +11,5 @@ var Datastore = require('nedb')
     console.log('Database successfully loaded')
 });
 
-// db.insert({"players": []});
-
-let dbData;
-db.find({}, (err, data) => {
-    dbData = data;
-    // console.log(data)
-})
 
 module.exports = db;

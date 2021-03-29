@@ -3,7 +3,11 @@
 $('select').on('change', (e) => {
     let alias = e.target.value;
     let position = e.target.name.substring(4);
+    
+    let redTotal = $('#red-total-score');
+    let bluTotal = $('#blu-total-score');
 
+    // fetch player score from db
     $.post("/new-game",
         {
             player: alias,
@@ -12,11 +16,22 @@ $('select').on('change', (e) => {
         function (data) {
             let score = data.score;
             let roleTarget = e.target.name;
-            console.log(roleTarget)
 
             let scoreCell = $("#" + roleTarget + '-score');
-            scoreCell.html(score)
-            console.log(scoreCell);
+            scoreCell.html(score);
+
+            updateTotals();
         }
     )
 })
+
+function updateTotals() {
+     // update total scores
+     let redTotal = $('#red-total-score');
+     let bluTotal = $('#blu-total-score');
+
+     if ($('#red-top-score').html()) {
+        redTotal += $('#red-top-score').html()
+        console.log(redTotal)
+     }
+}

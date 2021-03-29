@@ -35,15 +35,11 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td id="red-top-score">
-                            
-                        </td>
+                        <td id="red-top-score"></td>
                         <td>
                             Top
                         </td>
-                        <td id="blu-top-score">
-
-                        </td>
+                        <td id="blu-top-score"></td>
                         <td>
                             <select name="blu-top" id="blu-top">
                                 <option disabled selected value>--</option>
@@ -66,16 +62,12 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td id="red-jung-score">
-                            
-                        </td>
+                        <td id="red-jung-score"></td>
                         <td>
                             jung
                         </td>
 
-                        <td id="blu-jung-score">
-
-                        </td>
+                        <td id="blu-jung-score"></td>
                         <td>
                             <select name="blu-jung" id="blu-jung">
                                 <option disabled selected value>--</option>
@@ -98,16 +90,12 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td id="red-mid-score">
-                            
-                        </td>
+                        <td id="red-mid-score"></td>
                         <td>
                             mid
                         </td>
 
-                        <td id="blu-mid-score">
-
-                        </td>
+                        <td id="blu-mid-score"></td>
                         <td>
                             <select name="blu-mid" id="blu-mid">
                                 <option disabled selected value>--</option>
@@ -130,16 +118,12 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td id="red-adc-score">
-                            
-                        </td>
+                        <td id="red-adc-score"></td>
                         <td>
                             adc
                         </td>
 
-                        <td id="blu-adc-score">
-
-                        </td>
+                        <td id="blu-adc-score"></td>
                         <td>
                             <select name="blu-adc" id="blu-adc">
                                 <option disabled selected value>--</option>
@@ -162,15 +146,11 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td id="red-sup-score">
-                            
-                        </td>
+                        <td id="red-sup-score"></td>
                         <td>
                             sup
                         </td>
-                        <td id="blu-sup-score">
-
-                        </td>
+                        <td id="blu-sup-score"></td>
                         <td>
                             <select name="blu-sup" id="blu-sup">
                                 <option disabled selected value>--</option>
@@ -181,6 +161,13 @@
                                 <% } %>
                              </select>
                         </td>
+                    </tr>
+                    <tr>
+                        <td>Red Score</td>
+                        <td id="red-total-score"></td>
+                        <td>- VS -</td>
+                        <td id="blu-total-score"></td>
+                        <td>Blue Score</td>
                     </tr>
                 </tbody>
                 
@@ -198,6 +185,7 @@
                         <th>Mid</th>
                         <th>ADC</th>
                         <th>Support</th>
+                        <th>W/L</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -209,6 +197,7 @@
                           <td><%= players[i].posRatings.mid %></td>
                           <td><%= players[i].posRatings.adc%></td>
                           <td><%= players[i].posRatings.sup %></td>
+                          <td><%= players[i].wins %> / <%= players[i].losses %></td>
                         </tr>
                     <% } %>
                 </tbody>
