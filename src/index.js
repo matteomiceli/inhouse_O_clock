@@ -31,6 +31,28 @@ app.get( "/new-game", ( req, res ) => {
     })
 });
 
+app.post( "/new-game", ( req, res ) => {
+    let players;
+    db.find({}, (err, data) => {
+        players = data;
+    })
+
+    let reqPlayer = req.body.player;
+    let reqPosition = req.body.position
+
+    db.find({ alias: reqPlayer }, (err, data) => {
+        if (err) {
+            return;
+        }
+        data = data[0]
+        let score = data['posRatings'][reqPosition];
+
+
+        res.send({ alias: reqPlayer, score: score });
+    })
+});
+
+
 
 // player creation
 app.post( "/player-created", (req, res) => {

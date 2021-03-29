@@ -1,9 +1,16 @@
+// events for selectors pushes name and position to server
+// so score can be returned
 $('select').on('change', (e) => {
-    let value = e.target.value;
-    console.log()
-    $.ajax({
-        type: 
-    })
-})
+    let alias = e.target.value;
+    let position = e.target.name.substring(4);
 
-console.log($('select'))
+    $.post("/new-game",
+        {
+            player: alias,
+            position: position
+        },
+        function (data) {
+            console.log(data);
+        }
+    )
+})
