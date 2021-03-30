@@ -1,13 +1,6 @@
 // events for selectors pushes name and position to server
-// so score can be returned -- click event to retrieve prev
-// value
+// so score can be returned 
 
-let prev;
-
-$('select').on('click', (e) => { // use .data to pass in prev val to next function
-    prev = e.target.value; // gain access to DOM score value
-    console.log(prev)
-}); 
 $('select').on('change', (e) => {
     let alias = e.target.value;
     let position = e.target.name.substring(4);
@@ -26,49 +19,38 @@ $('select').on('change', (e) => {
             let scoreCell = $("#" + roleTarget + '-score');
             scoreCell.html(score);
 
-            updateTotals(scoreCell, team, prev);
+            updateTotals(team);
         }
     )
 })
 
-function updateTotals(cell, team, previous) {
-     // update total scores
-     let currentRedTotal = $('#red-total-score');
-     let bluTotal = $('#blu-total-score');
-
-     if (currentRedTotal.html() != '') {
-         if (cell.html() != '') {
-            let total = parseInt(currentRedTotal.html());
-            currentRedTotal.html(total - parseInt(previous));
-            currentRedTotal.html(total + parseInt(cell.html()));
-         } else {
-            let total = parseInt(currentRedTotal.html());
-            currentRedTotal.html(total + parseInt(cell.html()));
-         }
-     } else {
-        currentRedTotal.html(cell.html());
-     }
+// collects values from both teams and adds them to total
+function updateTotals(team) {
+    // update total scores
+    let currentRedTotal = $('#red-total-score');
+    let currentBluTotal = $('#blu-total-score');
     
-
-
+    if (team == 'red') {
+        let sum = 0;
+        $("td[name='red-scores']").each((i, val) => {
+            let score = val.innerHTML;
     
+            if (score != '') {
+                sum += parseInt(val.innerHTML);
+                // console.log(parseInt(val.innerHTML));
+            }
+            currentRedTotal.html(sum);
+        })
+    } else if (team == 'blu') {
+        let sum = 0;
+        $("td[name='blu-scores']").each((i, val) => {
+            let score = val.innerHTML;
     
-     
-    //  if (currentRedTotal == '') {
-    //      currentRedTotal = 0;
-    //  } else {
-    //      currentRedTotal = ($('#red-total-score').html());
-    //  }
-
-    //  console.log(currentRedTotal)
-
-    //  if (team == 'red') {
-    //     if (cell.html()) {
-    //         $('#red-total-score').html(currentRedTotal + parseInt(cell.html()))
-    //         console.log((currentRedTotal));
-            
-    //      }
-    //  }
-
-     
+            if (score != '') {
+                sum += parseInt(val.innerHTML);
+                // console.log(parseInt(val.innerHTML));
+            }
+            currentBluTotal.html(sum);
+        })
+    }    
 }
