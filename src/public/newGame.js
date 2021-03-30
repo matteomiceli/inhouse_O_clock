@@ -2,9 +2,11 @@
 // so score can be returned -- click event to retrieve prev
 // value
 
+let prev;
+
 $('select').on('click', (e) => { // use .data to pass in prev val to next function
-    origVal = e.target.value;
-    console.log(origVal)
+    prev = e.target.value; // gain access to DOM score value
+    console.log(prev)
 }); 
 $('select').on('change', (e) => {
     let alias = e.target.value;
@@ -24,26 +26,25 @@ $('select').on('change', (e) => {
             let scoreCell = $("#" + roleTarget + '-score');
             scoreCell.html(score);
 
-            updateTotals(scoreCell, team);
+            updateTotals(scoreCell, team, prev);
         }
     )
 })
 
-function updateTotals(cell, team) {
+function updateTotals(cell, team, previous) {
      // update total scores
      let currentRedTotal = $('#red-total-score');
      let bluTotal = $('#blu-total-score');
 
      if (currentRedTotal.html() != '') {
          if (cell.html() != '') {
-             // subtract prev value before adding new sel value
             let total = parseInt(currentRedTotal.html());
+            currentRedTotal.html(total - parseInt(previous));
             currentRedTotal.html(total + parseInt(cell.html()));
          } else {
             let total = parseInt(currentRedTotal.html());
             currentRedTotal.html(total + parseInt(cell.html()));
          }
-        console.log(currentRedTotal.html())
      } else {
         currentRedTotal.html(cell.html());
      }
