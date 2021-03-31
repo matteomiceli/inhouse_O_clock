@@ -32,11 +32,6 @@ app.get( "/new-game", ( req, res ) => {
 });
 
 app.post( "/new-game", ( req, res ) => {
-    let players;
-    db.find({}, (err, data) => {
-        players = data;
-    })
-
     let reqPlayer = req.body.player;
     let reqPosition = req.body.position
 
