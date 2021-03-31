@@ -68,7 +68,7 @@ function favourite () {
     let favourite; 
 
     if (redProb > blueProb) {
-        
+        $('table').append("<p id='favourite'>Red favoured</p>");
     }
 
     // console.log(redProb + '  ' + blueProb);
