@@ -20,6 +20,7 @@ $('select').on('change', (e) => {
             scoreCell.html(score);
 
             updateTotals(team);
+            console.log(favourite());
         }
     )
 })
@@ -28,7 +29,7 @@ $('select').on('change', (e) => {
 function updateTotals(team) {
     // update total scores
     let currentRedTotal = $('#red-total-score');
-    let currentBluTotal = $('#blu-total-score');
+    let currentBlueTotal = $('#blu-total-score');
     
     if (team == 'red') {
         let sum = 0;
@@ -50,7 +51,27 @@ function updateTotals(team) {
                 sum += parseInt(val.innerHTML);
                 // console.log(parseInt(val.innerHTML));
             }
-            currentBluTotal.html(sum);
+            currentBlueTotal.html(sum);
         })
     }    
+}
+
+// displays and returns probability of winning for both teams
+function favourite () {
+    let redScore = $('#red-total-score').html();
+    let blueScore = $('#blu-total-score').html();
+    let k = 12;
+
+    let redProb = 1/(1 + Math.pow(10, ((blueScore - redScore)/100)));
+    let blueProb = 1 - redProb;
+
+    let favourite; 
+
+    if (redProb > blueProb) {
+        
+    }
+
+    // console.log(redProb + '  ' + blueProb);
+
+    return { red: redProb, blue: blueProb }
 }
