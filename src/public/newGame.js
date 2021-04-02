@@ -57,7 +57,7 @@ function updateTotals(team) {
     }    
 }
 
-// displays and returns probability of winning for both teams
+// displays and returns probability of winning for favoured team
 function favourite () {
     let redScore = $('#red-total-score').html();
     let blueScore = $('#blu-total-score').html();
@@ -67,13 +67,15 @@ function favourite () {
     let blueProb = 1 - redProb;
 
     if (redProb > blueProb) {
-        $("p[id='favourite']").remove();
-        $('#red-side').append(`<p id='favourite'>Red favoured <span id='favourite-percent'>+${(redProb * 100) - 50}</span></p>`);
-        // $('table[]').append("<p id='favourite'>Red favoured</p>");
+        $("#favourite-percent").remove();
+        $('#red-side').append(`<span id='favourite-percent'>+${((redProb * 100) - 50).toFixed(2)}%</span>`);
     } else if (redProb < blueProb) {
-        $("p[id='favourite']").remove();
-        $('#blue-side').append(`<p id='favourite'>Blue favoured <span id='favourite-percent'>+${(blueProb * 100) - 50}</span></p>`);
-    }
+        $("#favourite-percent").remove();
+        $('#blue-side').append(`<span id='favourite-percent'>+${((blueProb * 100) - 50).toFixed(2)}%</span>`);
+    } else {
+        $("#favourite-percent").remove();
+    } 
+
 
     // console.log(redProb + '  ' + blueProb);
 
