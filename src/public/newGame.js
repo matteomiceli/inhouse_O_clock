@@ -6,6 +6,7 @@ $('select').on('change', (e) => {
     let position = e.target.name.substring(4);
     let team = e.target.name.substring(0,3);
 
+
     // fetch player score from db
     $.post("/new-game",
         {
@@ -65,10 +66,10 @@ function favourite () {
     let redProb = 1/(1 + Math.pow(10, ((blueScore - redScore)/100)));
     let blueProb = 1 - redProb;
 
-    let favourite; 
+    let favourite;
 
     if (redProb > blueProb) {
-        $('table').append("<p id='favourite'>Red favoured</p>");
+        $('table[]').append("<p id='favourite'>Red favoured</p>");
     }
 
     // console.log(redProb + '  ' + blueProb);
