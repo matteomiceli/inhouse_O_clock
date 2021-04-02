@@ -66,10 +66,13 @@ function favourite () {
     let redProb = 1/(1 + Math.pow(10, ((blueScore - redScore)/100)));
     let blueProb = 1 - redProb;
 
-    let favourite;
-
     if (redProb > blueProb) {
-        $('table[]').append("<p id='favourite'>Red favoured</p>");
+        $("p[id='favourite']").remove();
+        $('#red-side').append(`<p id='favourite'>Red favoured <span id='favourite-percent'>+${(redProb * 100) - 50}</span></p>`);
+        // $('table[]').append("<p id='favourite'>Red favoured</p>");
+    } else if (redProb < blueProb) {
+        $("p[id='favourite']").remove();
+        $('#blue-side').append(`<p id='favourite'>Blue favoured <span id='favourite-percent'>+${(blueProb * 100) - 50}</span></p>`);
     }
 
     // console.log(redProb + '  ' + blueProb);
