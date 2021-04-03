@@ -39,7 +39,6 @@ function updateTotals(team) {
     
             if (score != '') {
                 sum += parseInt(val.innerHTML);
-                // console.log(parseInt(val.innerHTML));
             }
             currentRedTotal.html(sum);
         })
@@ -50,7 +49,6 @@ function updateTotals(team) {
     
             if (score != '') {
                 sum += parseInt(val.innerHTML);
-                // console.log(parseInt(val.innerHTML));
             }
             currentBlueTotal.html(sum);
         })
@@ -81,3 +79,27 @@ function favourite () {
 
     return { red: redProb, blue: blueProb }
 }
+
+// on red team victory
+$('#red-victory').on('click', (e) => {
+    const win = $("td[name='red-scores']").filter((score) => {
+        return score.innerHTML
+    });
+    console.log($("td[name='red-scores']").innerHTML)
+    let lose = $("td[name='blu-scores']");
+    // const favourite = favourite();
+
+    console.log()
+    // $.post("/red-win",
+    //     {
+    //         win: 'as',
+    //         lose: lose,
+    //         // prob: favourite
+    //     },
+    //     function (data) {
+            
+    //     }
+    // )
+});
+
+// on blue team victory
