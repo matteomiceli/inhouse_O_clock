@@ -82,14 +82,18 @@ function favourite () {
 
 // on red team victory
 $('#red-victory').on('click', (e) => {
-    const win = $("td[name='red-scores']").filter((score) => {
-        return score.innerHTML
+    let winners = [];
+    let losers = [];
+    
+    $("td[name='red-scores']").each((i, score) => {
+        obj
     });
-    console.log($("td[name='red-scores']").innerHTML)
-    let lose = $("td[name='blu-scores']");
-    // const favourite = favourite();
 
-    console.log()
+    $("td[name='blue-scores']").each((i, val) => {
+
+    });
+
+
     // $.post("/red-win",
     //     {
     //         win: 'as',
