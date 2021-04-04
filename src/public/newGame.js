@@ -21,7 +21,7 @@ $('select').on('change', (e) => {
             scoreCell.html(score);
 
             updateTotals(team);
-            console.log(favourite());
+            favourite();
         }
     )
 })
@@ -82,28 +82,21 @@ function favourite () {
 
 // on red team victory
 $('#red-victory').on('click', (e) => {
-    let winners = [];
-    let losers = [];
+    let winners = {};
+    let losers = {};
+    
     
     $("td[name='red-scores']").each((i, score) => {
-        obj
-    });
-
-    $("td[name='blue-scores']").each((i, val) => {
+       winners[score.id] = score.innerHTML;
 
     });
 
+    $("td[name='blu-scores']").each((i, score) => {
+        losers[score.id] = score.innerHTML;
+    });
 
-    // $.post("/red-win",
-    //     {
-    //         win: 'as',
-    //         lose: lose,
-    //         // prob: favourite
-    //     },
-    //     function (data) {
-            
-    //     }
-    // )
+    $.post() // post data to server, call favourite function to pass probabilities 
 });
+
 
 // on blue team victory
