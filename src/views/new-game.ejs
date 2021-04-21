@@ -26,7 +26,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <select name="red-top" id="red-top">
+                            <select name="red-top" id="red-top" class="red-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -35,13 +35,14 @@
                                 <% } %>
                              </select>
                         </td>
+                        <!-- perhaps change red-scores and blu-scores to classes? -->
                         <td name="red-scores" id="red-top-score"></td>
                         <td>
                             Top
                         </td>
                         <td name="blu-scores" id="blu-top-score"></td>
                         <td>
-                            <select name="blu-top" id="blu-top">
+                            <select name="blu-top" id="blu-top" class="blu-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -53,7 +54,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-jung" id="red-jung">
+                            <select name="red-jung" id="red-jung" class="red-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -69,7 +70,7 @@
 
                         <td name="blu-scores" id="blu-jung-score"></td>
                         <td>
-                            <select name="blu-jung" id="blu-jung">
+                            <select name="blu-jung" id="blu-jung" class="blu-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -81,7 +82,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-mid" id="red-mid">
+                            <select name="red-mid" id="red-mid" class="red-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -97,7 +98,7 @@
 
                         <td name="blu-scores" id="blu-mid-score"></td>
                         <td>
-                            <select name="blu-mid" id="blu-mid">
+                            <select name="blu-mid" id="blu-mid" class="blu-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -109,7 +110,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-adc" id="red-adc">
+                            <select name="red-adc" id="red-adc" class="red-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -125,7 +126,7 @@
 
                         <td name="blu-scores" id="blu-adc-score"></td>
                         <td>
-                            <select name="blu-adc" id="blu-adc">
+                            <select name="blu-adc" id="blu-adc" class="blu-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -137,7 +138,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-sup" id="red-sup">
+                            <select name="red-sup" id="red-sup" class="red-select">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -150,7 +151,7 @@
                         <td>
                             sup
                         </td>
-                        <td name="blu-scores" id="blu-sup-score"></td>
+                        <td name="blu-scores" id="blu-sup-score" class="blu-select"></td>
                         <td>
                             <select name="blu-sup" id="blu-sup">
                                 <option disabled selected value>--</option>

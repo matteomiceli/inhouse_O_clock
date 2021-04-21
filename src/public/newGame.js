@@ -74,9 +74,7 @@ function favourite () {
         $("#favourite-percent").remove();
     } 
 
-
     // console.log(redProb + '  ' + blueProb);
-
     return { red: redProb, blue: blueProb }
 }
 
@@ -84,6 +82,9 @@ function favourite () {
 $('#red-victory').on('click', (e) => {
     let winners = {};
     let losers = {};
+    // need to parse out vals, iterate through and add to object
+    let redTeam = $('.red-select');
+    let bluTeam = $('.blu-select');
     
     
     $("td[name='red-scores']").each((i, score) => {
@@ -95,7 +96,16 @@ $('#red-victory').on('click', (e) => {
         losers[score.id] = score.innerHTML;
     });
 
-    $.post() // post data to server, call favourite function to pass probabilities 
+    console.log(winners, losers, redTeam)
+
+    // post data to server, call favourite function to pass probabilities 
+    // $.post("/game-results",
+    //     {
+    //         winner: 'red',
+
+    //     },
+    //     function (data) {}
+    // )
 });
 
 
