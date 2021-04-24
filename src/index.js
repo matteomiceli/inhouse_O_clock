@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = 8080; // default port to listen
 const db = require('./database');
-const Player = require('../models/playerModel');
+const {Player, updatePlayerScores} = require('../models/playerModel');
 const { stringify } = require('querystring');
 
 // views engine
@@ -31,7 +31,7 @@ app.get( "/new-game", ( req, res ) => {
     })
 });
 
-app.post( "/new-game", ( req, res ) => {
+app.post( "/new-game", (req, res) => {
     let reqPlayer = req.body.player;
     let reqPosition = req.body.position
 
@@ -47,11 +47,10 @@ app.post( "/new-game", ( req, res ) => {
     })
 });
 
-app.post('/game-results', () => {
-            
+app.post('/game-results', (req, res) => {
+    console.log(req.body);
+    updatePlayerScores(req.body);
 })
-
-
 
 // player creation
 app.post( "/player-created", (req, res) => {

@@ -80,6 +80,8 @@ function favourite() {
 
 // on red team victory
 $('#red-victory').on('click', (e) => {
+
+    // perhaps call function and pass in victor to do all this logic instead
     const winner = 'red';
     let redScores = {};
     $("td[name='red-scores']").each((i, score) => {
@@ -97,35 +99,65 @@ $('#red-victory').on('click', (e) => {
     let gameData = {
         winningTeam: winner,
         red: {
-            top: {alias: redTeamMembers[0].value, score: redScores['red-top-score']},
-            jung: {alias: redTeamMembers[1].value, score: redScores['red-jung-score']},
-            mid: {alias: redTeamMembers[2].value, score: redScores['red-mid-score']},
-            adc: {alias: redTeamMembers[3].value, score: redScores['red-adc-score']},
-            sup: {alias: redTeamMembers[4].value, score: redScores['red-sup-score']}
+            top: {alias: redTeamMembers[0].value, score: parseInt(redScores['red-top-score'])},
+            jung: {alias: redTeamMembers[1].value, score: parseInt(redScores['red-jung-score'])},
+            mid: {alias: redTeamMembers[2].value, score: parseInt(redScores['red-mid-score'])},
+            adc: {alias: redTeamMembers[3].value, score: parseInt(redScores['red-adc-score'])},
+            sup: {alias: redTeamMembers[4].value, score: parseInt(redScores['red-sup-score'])}
         },
         blu: {
-            top: {alias: bluTeamMembers[0].value, score: bluScores['blu-top-score']},
-            jung: {alias: bluTeamMembers[1].value, score: bluScores['blu-jung-score']},
-            mid: {alias: bluTeamMembers[2].value, score: bluScores['blu-mid-score']},
-            adc: {alias: bluTeamMembers[3].value, score: bluScores['blu-adc-score']},
-            sup: {alias: bluTeamMembers[4].value, score: bluScores['blu-sup-score']}
+            top: {alias: bluTeamMembers[0].value, score: parseInt(bluScores['blu-top-score'])},
+            jung: {alias: bluTeamMembers[1].value, score: parseInt(bluScores['blu-jung-score'])},
+            mid: {alias: bluTeamMembers[2].value, score: parseInt(bluScores['blu-mid-score'])},
+            adc: {alias: bluTeamMembers[3].value, score: parseInt(bluScores['blu-adc-score'])},
+            sup: {alias: bluTeamMembers[4].value, score: parseInt(bluScores['blu-sup-score'])}
         },
         probability: favourite(),
     }
 
-
-
-    console.log(gameData)
-
-    // post data to server, call favourite function to pass probabilities 
-    // $.post("/game-results",
-    //     {
-    //         winner: 'red',
-
-    //     },
-    //     function (data) {}
-    // )
+    postGameResults(gameData);
 });
 
 
 // on blue team victory
+$('#red-victory').on('click', (e) => {
+    const winner = 'blue';
+    let redScores = {};
+    $("td[name='red-scores']").each((i, score) => {
+        redScores[score.id] = score.innerHTML;
+    });
+
+    let bluScores = {};
+    $("td[name='blu-scores']").each((i, score) => {
+        bluScores[score.id] = score.innerHTML;
+    });
+
+    let redTeamMembers = $('.red-select');
+    let bluTeamMembers = $('.blu-select');
+
+    let gameData = {
+        winningTeam: winner,
+        red: {
+            top: {alias: redTeamMembers[0].value, score: parseInt(redScores['red-top-score'])},
+            jung: {alias: redTeamMembers[1].value, score: parseInt(redScores['red-jung-score'])},
+            mid: {alias: redTeamMembers[2].value, score: parseInt(redScores['red-mid-score'])},
+            adc: {alias: redTeamMembers[3].value, score: parseInt(redScores['red-adc-score'])},
+            sup: {alias: redTeamMembers[4].value, score: parseInt(redScores['red-sup-score'])}
+        },
+        blu: {
+            top: {alias: bluTeamMembers[0].value, score: parseInt(bluScores['blu-top-score'])},
+            jung: {alias: bluTeamMembers[1].value, score: parseInt(bluScores['blu-jung-score'])},
+            mid: {alias: bluTeamMembers[2].value, score: parseInt(bluScores['blu-mid-score'])},
+            adc: {alias: bluTeamMembers[3].value, score: parseInt(bluScores['blu-adc-score'])},
+            sup: {alias: bluTeamMembers[4].value, score: parseInt(bluScores['blu-sup-score'])}
+        },
+        probability: favourite(),
+    }
+
+    postGameResults(gameData);
+});
+
+// post data to server, call favourite function to pass probabilities 
+function postGameResults(data) {
+    $.post("/game-results", data);
+}

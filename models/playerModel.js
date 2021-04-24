@@ -42,7 +42,11 @@ class Player {
     }
 }
 
-module.exports =  Player;
+function updatePlayerScores() {
+    
+}
+
+module.exports =  { Player, updatePlayerScores };
 
 // received from form
 // {
