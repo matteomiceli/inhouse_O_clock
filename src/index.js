@@ -47,6 +47,10 @@ app.post( "/new-game", ( req, res ) => {
     })
 });
 
+app.post('/game-results', () => {
+            
+})
+
 
 
 // player creation
