@@ -44,7 +44,7 @@ app.post( "/new-game", (req, res) => {
 
 
         res.send({ alias: reqPlayer, score: score });
-    })
+    })  
 });
 
 app.post('/game-results', (req, res) => {
