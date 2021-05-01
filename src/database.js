@@ -1,10 +1,15 @@
 require('dotenv').config();
-const mongoose = require('mongoose');
+const db = require('mongoose');
 
-const db = mongoose.connection;
-mongoose.connect(process.env.DB_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
+
+db.connect(process.env.DB_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => console.log('connected to DB...'))
   .catch((err) => console.log(err));
+
+
+module.exports = db;
+
+
 
 // make a player model and then replace playerModel function with mongoose schema
 
@@ -21,6 +26,3 @@ mongoose.connect(process.env.DB_STRING, {useNewUrlParser: true, useUnifiedTopolo
 //     }
 //     console.log('Database successfully loaded')
 // });
-
-
-module.exports = db;

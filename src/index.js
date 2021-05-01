@@ -3,8 +3,7 @@ const express = require('express');
 const app = express();
 const port = 8080; // default port to listen
 const db = require('./database');
-const {Player, updatePlayerScores} = require('../models/playerModel');
-const { stringify } = require('querystring');
+const Player = require('../models/playerModel');
 
 // views engine
 app.set( "views", path.join( __dirname, "views" ) );
@@ -24,7 +23,7 @@ app.get( "/", ( req, res ) => {
 
 // game creation
 app.get( "/new-game", ( req, res ) => {
-    db.find({}, (err, data) => {
+    Player.find({}, (err, data) => {
         let players = data;
         // res.json(data)
         res.render( "new-game", { players: players });
@@ -35,7 +34,7 @@ app.post( "/new-game", (req, res) => {
     let reqPlayer = req.body.player;
     let reqPosition = req.body.position
 
-    db.find({ alias: reqPlayer }, (err, data) => {
+    Player.find({ alias: reqPlayer }, (err, data) => {
         if (err) {
             return;
         }
@@ -53,14 +52,26 @@ app.post('/game-results', (req, res) => {
 })
 
 // player creation
-app.post( "/player-created", (req, res) => {
-    let player = new Player(req.body);
-    if (player.getAuth()) {
-        player.pushToDb();
-        res.render("player-created", { player: player });
-        return;
-    }
-        res.render('error-auth')
+app.post( "/player-created", async (req, res) => {
+    let playerObj = req.body;
+    console.log(playerObj);
+    
+    const newPlayer = new Player({
+        name: playerObj.name,
+        alias: playerObj.alias,
+        posRatings: {
+            top: playerObj.top,
+            jung: playerObj.jung,
+            mid: playerObj.mid,
+            adc: playerObj.adc,
+            sup: playerObj.sup
+        },
+        wins: 0,
+        losses: 0
+    });
+
+    newPlayer.save();
+    res.render('player-created', { player: newPlayer })
 })
 
 
