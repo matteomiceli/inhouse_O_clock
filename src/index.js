@@ -22,8 +22,8 @@ app.get("/", (req, res) => {
 
 
 // game creation
-app.get("/new-game", (req, res) => {
-    Player.find({}, (err, data) => {
+app.get("/new-game", async (req, res) => {
+    await Player.find({}, (err, data) => {
         let players = data;
         // res.json(data)
         res.render("new-game", { players: players });
