@@ -1,0 +1,1 @@
+// applies elo function and returns new data to be updated in db
