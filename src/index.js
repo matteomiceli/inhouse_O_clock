@@ -6,8 +6,8 @@ const db = require('./database');
 const Player = require('../models/playerModel');
 
 // views engine
-app.set( "views", path.join( __dirname, "views" ) );
-app.set( "view engine", "ejs" );
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 // body parsing
 app.use(express.json());
@@ -16,25 +16,25 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-app.get( "/", ( req, res ) => {
+app.get("/", (req, res) => {
     res.render('index')
 });
 
 
 // game creation
-app.get( "/new-game", ( req, res ) => {
+app.get("/new-game", (req, res) => {
     Player.find({}, (err, data) => {
         let players = data;
         // res.json(data)
-        res.render( "new-game", { players: players });
+        res.render("new-game", { players: players });
     })
 });
 
-app.post( "/new-game", (req, res) => {
+app.post("/new-game", async (req, res) => {
     let reqPlayer = req.body.player;
     let reqPosition = req.body.position
 
-    Player.find({ alias: reqPlayer }, (err, data) => {
+    await Player.find({ alias: reqPlayer }, (err, data) => {
         if (err) {
             return;
         }
@@ -43,7 +43,7 @@ app.post( "/new-game", (req, res) => {
 
 
         res.send({ alias: reqPlayer, score: score });
-    })  
+    })
 });
 
 app.post('/game-results', (req, res) => {
@@ -52,10 +52,10 @@ app.post('/game-results', (req, res) => {
 })
 
 // player creation
-app.post( "/player-created", async (req, res) => {
+app.post("/player-created", async (req, res) => {
     let playerObj = req.body;
     console.log(playerObj);
-    
+
     const newPlayer = new Player({
         name: playerObj.name,
         alias: playerObj.alias,
@@ -70,23 +70,23 @@ app.post( "/player-created", async (req, res) => {
         losses: 0
     });
 
-    newPlayer.save();
+    await newPlayer.save();
     res.render('player-created', { player: newPlayer })
 })
 
 
-app.get( "/new-player", (req, res) => {
+app.get("/new-player", (req, res) => {
     res.render('new-player');
 })
 
 
-app.get( "/error-auth", (req, res) => {
+app.get("/error-auth", (req, res) => {
     res.render('error-auth');
 })
 
 
 // start the Express server
-app.listen( port, () => {
-    console.log( `server running on port ${ port }` );
-}); 
+app.listen(port, () => {
+    console.log(`server running on port ${port}`);
+});
 
