@@ -4,6 +4,7 @@ const app = express();
 const port = 8080; // default port to listen
 const db = require('./database');
 const Player = require('../models/playerModel');
+const rating = require('../controllers/playerRating')
 
 // views engine
 app.set("views", path.join(__dirname, "views"));
@@ -48,7 +49,7 @@ app.post("/new-game", async (req, res) => {
 
 app.post('/game-results', (req, res) => {
     console.log(req.body);
-    updatePlayerScores(req.body);
+    rating.updatePlayerScores(req.body);
 })
 
 // player creation
@@ -71,7 +72,7 @@ app.post("/player-created", async (req, res) => {
     });
 
     await newPlayer.save();
-    res.render('player-created', { player: newPlayer })
+    res.render('player-created', { player: newPlayer });
 })
 
 

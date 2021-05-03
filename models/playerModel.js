@@ -61,26 +61,3 @@ module.exports = Player;
 //         db.insert(this);
 //     }
 // }
-
-
-
-
-// gameData structure
-// {
-//     winningTeam: 'red',
-//     red: {
-//       top: { alias: 'Hiii1324', score: '50' },
-//       jung: { alias: 'Bougino', score: '89' },
-//       mid: { alias: '', score: '' },
-//       adc: { alias: '', score: '' },
-//       sup: { alias: '', score: '' }
-//     },
-//     blu: {
-//       top: { alias: '', score: '' },
-//       jung: { alias: '', score: '' },
-//       mid: { alias: '', score: '' },
-//       adc: { alias: '', score: '' },
-//       sup: { alias: '', score: '' }
-//     },
-//     probability: { red: '0.9608565972483071', blue: '0.039143402751692924' }
-//   }
