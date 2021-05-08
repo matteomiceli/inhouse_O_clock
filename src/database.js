@@ -1,5 +1,6 @@
 require('dotenv').config();
 const db = require('mongoose');
+db.set('useFindAndModify', false);
 
 
 db.connect(process.env.DB_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
