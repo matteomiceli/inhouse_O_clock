@@ -13,7 +13,8 @@ const playerSchema = new Schema({
         sup: String
     },
     wins: Number,
-    losses: Number
+    losses: Number,
+    created: Date,
 }, {collection: 'players'})
 
 // player model 
@@ -21,41 +22,3 @@ const Player = mongoose.model('newPlayer', playerSchema);
 
 
 module.exports = Player;
-
-// class Player {
-//     name;
-//     alias;
-//     posRatings;
-//     wins;
-//     losses;
-//     #password = 'tf';
-//     #auth = true;
-
-
-//     constructor(req) {
-//         console.log(req);
-//         if (req.password === this.#password) {
-//             this.name = req.name;
-//             this.alias = req.alias;
-//             this.posRatings = {
-//                 top: req.top,
-//                 jung: req.jung,
-//                 mid: req.mid,
-//                 adc: req.adc,
-//                 sup: req.sup
-//             }
-//             this.wins = 0;
-//             this.losses = 0;
-//             return;
-//         }
-//         this.#auth = false;
-//     }
-
-//     getAuth() {
-//         return this.#auth;
-//     }
-
-//     pushToDb() {
-//         db.insert(this);
-//     }
-// }

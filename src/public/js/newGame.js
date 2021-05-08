@@ -80,7 +80,7 @@ function favourite() {
 
 // on red team victory
 $('#red-victory').on('click', () => {
-    gameData = sendGameData('red')
+    gameData = sendGameData('red');
     postGameResults(gameData);
 });
 
@@ -131,5 +131,7 @@ function sendGameData(winningTeam) {
 
 // post data to server, call favourite function to pass probabilities 
 function postGameResults(data) {
-    $.post("/game-results", data);
+    $.post("/game-results", data, (results) => {
+        console.log(results);
+    });
 }

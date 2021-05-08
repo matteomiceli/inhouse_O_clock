@@ -3,7 +3,7 @@
 // UPDATE FORMULA 
 // new_rating = rating + k-score (score(1 or 0) - expected score);
 
-function updatePlayerScores(gameData) {
+function getScoreAdjust(gameData) {
     let k = 16;
     if (gameData.winningTeam == 'red') {
         let redProb = gameData.probability.red;
@@ -15,7 +15,8 @@ function updatePlayerScores(gameData) {
         return { 
             redScore: Math.round(redScoreAdjust), 
             blueScore: Math.round(blueScoreAdjust),
-            gameData: gameData
+            gameData: gameData,
+            date: new Date()
         }
     } else {
         let redProb = gameData.probability.red;
@@ -27,32 +28,10 @@ function updatePlayerScores(gameData) {
         return { 
             redScore: Math.round(redScoreAdjust), 
             blueScore: Math.round(blueScoreAdjust),
-            gameData: gameData
+            gameData: gameData,
+            date: new Date()
         }
     }
 }
 
-module.exports = { updatePlayerScores }
-
-
-// gameData structure
-const data = {
-    winningTeam: 'blue',
-    red: {
-      top: { alias: 'Hiii1324', score: '50' },
-      jung: { alias: 'Bougino', score: '89' },
-      mid: { alias: '', score: '' },
-      adc: { alias: '', score: '' },
-      sup: { alias: '', score: '' }
-    },
-    blu: {
-      top: { alias: '', score: '' },
-      jung: { alias: '', score: '' },
-      mid: { alias: '', score: '' },
-      adc: { alias: '', score: '' },
-      sup: { alias: '', score: '' }
-    },
-    probability: { red: '0.6', blue: '0.42' }
-  }
-
-console.log(updatePlayerScores(data));
+module.exports = { getScoreAdjust }
