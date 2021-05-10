@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 const port = 8080; // default port to listen
 const db = require('./database');
-const { Player, updatePlayerScores } = require('../models/playerModel');
-const Game = require('../models/gameModel')
-const rating = require('../controllers/playerRating')
+const { Player, updatePlayerScores } = require('./models/playerModel');
+const Game = require('./models/gameModel')
+const rating = require('./controllers/playerRating')
 
 // views engine
 app.set("views", path.join(__dirname, "views"));
@@ -64,25 +64,28 @@ app.post('/game-results', async (req, res) => {
 // player creation
 app.post("/player-created", async (req, res) => {
     let playerObj = req.body;
-    console.log(playerObj);
 
-    const newPlayer = new Player({
-        name: playerObj.name,
-        alias: playerObj.alias,
-        posRatings: {
-            top: playerObj.top,
-            jung: playerObj.jung,
-            mid: playerObj.mid,
-            adc: playerObj.adc,
-            sup: playerObj.sup
-        },
-        wins: 0,
-        losses: 0,
-        created: new Date()
-    });
-
-    await newPlayer.save();
-    res.render('player-created', { player: newPlayer });
+    if (playerObj.password == 'tf') {
+        const newPlayer = new Player({
+            name: playerObj.name,
+            alias: playerObj.alias,
+            posRatings: {
+                top: playerObj.top,
+                jung: playerObj.jung,
+                mid: playerObj.mid,
+                adc: playerObj.adc,
+                sup: playerObj.sup
+            },
+            wins: 0,
+            losses: 0,
+            created: new Date()
+        });
+    
+        await newPlayer.save();
+        res.render('player-created', { player: newPlayer });
+        return;
+    }
+    res.render('error-auth'); 
 })
 
 

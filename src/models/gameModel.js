@@ -1,4 +1,4 @@
-const mongoose = require('../src/database');
+const mongoose = require('../database');
 const { Schema } = mongoose;
  
 // schema for game model
