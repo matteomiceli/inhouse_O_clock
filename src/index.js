@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = 8080; // default port to listen
 const db = require('./database');
-const Player = require('../models/playerModel');
+const { Player, updatePlayerScores } = require('../models/playerModel');
 const Game = require('../models/gameModel')
 const rating = require('../controllers/playerRating')
 
@@ -56,86 +56,7 @@ app.post('/game-results', async (req, res) => {
     const newGame = new Game(gameObject);
     await newGame.save();
 
-    // updating player scores from ELO function -- move to playermodel?
-    if (gameObject.gameData.winningTeam == 'red') {
-        let redTeam = gameObject.gameData.red;
-        let redScore = gameObject.redScore;
-
-        let blueTeam = gameObject.gameData.blu;
-        let blueScore = gameObject.blueScore;
-
-        // red team [winners]
-        let topScoreRed = (parseInt(redTeam.top.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.top.alias }, {$set:{ 'posRatings.top': topScoreRed}, $inc: { wins: 1 }})
-        
-        let jungScoreRed = (parseInt(redTeam.jung.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.jung.alias }, {$set:{ 'posRatings.jung': jungScoreRed }, $inc: { wins: 1 }})
-
-        let midScoreRed = (parseInt(redTeam.mid.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.mid.alias }, {$set:{ 'posRatings.mid': midScoreRed }, $inc: { wins: 1 }})
-            
-        let adcScoreRed = (parseInt(redTeam.adc.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.adc.alias }, {$set:{ 'posRatings.adc': adcScoreRed }, $inc: { wins: 1 }})
-
-        let supScoreRed = (parseInt(redTeam.sup.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.sup.alias }, {$set:{ 'posRatings.adc': supScoreRed }, $inc: { wins: 1 }})
-        
-        // blue team [losers]
-        let topScoreBlu = (parseInt(blueTeam.top.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.top.alias }, {$set:{ 'posRatings.top': topScoreBlu }, $inc: { losses: 1 }})
-
-        let jungScoreBlu = (parseInt(blueTeam.jung.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.jung.alias }, {$set:{ 'posRatings.jung': jungScoreBlu }, $inc: { losses: 1 }})
-
-        let midScoreBlu = (parseInt(blueTeam.mid.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.mid.alias }, {$set:{ 'posRatings.mid': midScoreBlu }, $inc: { losses: 1 }})
-
-        let adcScoreBlu = (parseInt(blueTeam.adc.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.adc.alias }, {$set:{ 'posRatings.adc': adcScoreBlu }, $inc: { losses: 1 }})
-
-        let supScoreBlu = (parseInt(blueTeam.sup.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.sup.alias }, {$set:{ 'posRatings.sup': supScoreBlu }, $inc: { losses: 1 }})
-
-    } else {
-        let redTeam = gameObject.gameData.red;
-        let redScore = gameObject.redScore;
-
-        let blueTeam = gameObject.gameData.blu;
-        let blueScore = gameObject.blueScore;
-
-        // red team [losers]
-        let topScoreRed = (parseInt(redTeam.top.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.top.alias }, {$set:{ 'posRatings.top': topScoreRed }, $inc: { losses: 1 }})
-        
-        let jungScoreRed = (parseInt(redTeam.jung.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.jung.alias }, {$set:{ 'posRatings.jung': jungScoreRed }, $inc: { losses: 1 }})
-
-        let midScoreRed = (parseInt(redTeam.mid.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.mid.alias }, {$set:{ 'posRatings.mid': midScoreRed }, $inc: { losses: 1 }})
-            
-        let adcScoreRed = (parseInt(redTeam.adc.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.adc.alias }, {$set:{ 'posRatings.adc': adcScoreRed }, $inc: { losses: 1 }})
-
-        let supScoreRed = (parseInt(redTeam.sup.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.sup.alias }, {$set:{ 'posRatings.adc': supScoreRed }, $inc: { losses: 1 }})
-        
-        // blue team [winners]
-        let topScoreBlu = (parseInt(blueTeam.top.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.top.alias }, {$set:{ 'posRatings.top': topScoreBlu }, $inc: { wins: 1 }})
-
-        let jungScoreBlu = (parseInt(blueTeam.jung.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.jung.alias }, {$set:{ 'posRatings.jung': jungScoreBlu }, $inc: { wins: 1 }})
-
-        let midScoreBlu = (parseInt(blueTeam.mid.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.mid.alias }, {$set:{ 'posRatings.mid': midScoreBlu }, $inc: { wins: 1 }})
-
-        let adcScoreBlu = (parseInt(blueTeam.adc.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.adc.alias }, {$set:{ 'posRatings.adc': adcScoreBlu }, $inc: { wins: 1 }})
-
-        let supScoreBlu = (parseInt(blueTeam.sup.score) + blueScore).toString(); 
-        await Player.findOneAndUpdate({ alias: blueTeam.sup.alias }, {$set:{ 'posRatings.sup': supScoreBlu }, $inc: { wins: 1 }})
-    }
-
+    updatePlayerScores(gameObject);
 
     res.json(gameObject);
 })
