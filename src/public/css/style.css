@@ -13,3 +13,16 @@
 td, th {
     border: 1px solid black;
 }
+
+.blue-modal {
+    display: none;
+}
+
+.red-modal {
+    display: none;
+}
+
+.close-modal {
+    height: 16px;
+    cursor: pointer;
+}

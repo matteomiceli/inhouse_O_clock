@@ -78,18 +78,33 @@ function favourite() {
     return { red: redProb, blue: blueProb }
 }
 
-// on red team victory
+// modals
+$('.close-modal').on('click', () => {
+    $('.blue-modal').css('display', 'none');
+    $('.red-modal').css('display', 'none');
+})
+
 $('#red-victory').on('click', () => {
+    $('.blue-modal').css('display', 'none');
+    $('.red-modal').css('display', 'block');
+})
+
+$('#blue-victory').on('click', () => {
+    $('.red-modal').css('display', 'none');
+    $('.blue-modal').css('display', 'block');
+})
+
+$('#confirm-red-victory').on('click', () => {
     gameData = sendGameData('red');
     postGameResults(gameData);
 });
 
-$('#blue-victory').on('click', () => {
-    gameData = sendGameData('blue')
+$('#confirm-blue-victory').on('click', () => {
+    gameData = sendGameData('blue');
     postGameResults(gameData);
 });
 
-
+// returns game data
 function sendGameData(winningTeam) {
     const winner = winningTeam;
 
