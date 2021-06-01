@@ -4,8 +4,9 @@ const app = express();
 const port = 8080; // default port to listen
 const db = require('./database');
 const { Player, updatePlayerScores } = require('./models/playerModel');
-const Game = require('./models/gameModel')
-const rating = require('./controllers/playerRating')
+const Game = require('./models/gameModel');
+const rating = require('./controllers/playerRating');
+const { check, validationResult  } = require('express-validator');
 
 // views engine
 app.set("views", path.join(__dirname, "views"));
@@ -26,6 +27,10 @@ app.get("/", (req, res) => {
 // game creation
 app.get("/new-game", async (req, res) => {
     await Player.find({}, (err, data) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
         let players = data;
         // res.json(data)
         res.render("new-game", { players: players });
@@ -38,6 +43,7 @@ app.post("/new-game", async (req, res) => {
 
     await Player.find({ alias: reqPlayer }, (err, data) => {
         if (err) {
+            console.log(err);
             return;
         }
         data = data[0]
