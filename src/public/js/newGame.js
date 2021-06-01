@@ -7,7 +7,7 @@ $('select').on('change', (e) => {
     let team = e.target.name.substring(0, 3);
 
 
-    // fetch player score from db
+    // fetch player score from db and append to score cell
     $.post("/new-game",
         {
             player: alias,
