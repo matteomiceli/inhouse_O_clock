@@ -1,0 +1,1 @@
+// converts parsed form data into gameData object
