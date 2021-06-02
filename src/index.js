@@ -65,7 +65,7 @@ app.post('/game-results', async (req, res) => {
     // updatePlayerScores(gameObject);
 
     
-    // res.json(gameObject);
+    res.json(req.body);
 })
 
 // player creation
