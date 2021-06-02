@@ -11,6 +11,7 @@
     <nav class="navbar">
 
     </nav>
+    <form action="game-results" id="game-form" method="POST"></form>
     <div class="container">
         <div class="game-bracket">
             <table class="game-table">
@@ -26,7 +27,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <select name="red-top" id="red-top" class="red-select">
+                            <select name="red-top" id="red-top" class="red-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -42,7 +43,7 @@
                         </td>
                         <td name="blu-scores" id="blu-top-score"></td>
                         <td>
-                            <select name="blu-top" id="blu-top" class="blu-select">
+                            <select name="blu-top" id="blu-top" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -54,7 +55,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-jung" id="red-jung" class="red-select">
+                            <select name="red-jung" id="red-jung" class="red-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -70,7 +71,7 @@
 
                         <td name="blu-scores" id="blu-jung-score"></td>
                         <td>
-                            <select name="blu-jung" id="blu-jung" class="blu-select">
+                            <select name="blu-jung" id="blu-jung" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -82,7 +83,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-mid" id="red-mid" class="red-select">
+                            <select name="red-mid" id="red-mid" class="red-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -98,7 +99,7 @@
 
                         <td name="blu-scores" id="blu-mid-score"></td>
                         <td>
-                            <select name="blu-mid" id="blu-mid" class="blu-select">
+                            <select name="blu-mid" id="blu-mid" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -110,7 +111,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-adc" id="red-adc" class="red-select">
+                            <select name="red-adc" id="red-adc" class="red-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -126,7 +127,7 @@
 
                         <td name="blu-scores" id="blu-adc-score"></td>
                         <td>
-                            <select name="blu-adc" id="blu-adc" class="blu-select">
+                            <select name="blu-adc" id="blu-adc" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -138,7 +139,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-sup" id="red-sup" class="red-select">
+                            <select name="red-sup" id="red-sup" class="red-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -153,7 +154,7 @@
                         </td>
                         <td name="blu-scores" id="blu-sup-score"></td>
                         <td>
-                            <select name="blu-sup" id="blu-sup" class="blu-select">
+                            <select name="blu-sup" id="blu-sup" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -213,12 +214,14 @@
     <div class="blue-modal">
         <img src="/img/close.svg" alt="close button" class="close-modal">
         <p>Confirm blue as winning Team?</p>
-        <button id="confirm-blue-victory">Confirm</button>
+        <input type="submit" form="game-form" value="Blue Victory">
+        <!-- <button id="confirm-blue-victory">Confirm</button> -->
     </div>
     <div class="red-modal">
         <img src="/img/close.svg" alt="close button" class="close-modal">
         <p>Confirm red as winning Team?</p>
-        <button id="confirm-red-victory">Confirm</button>
+        <input type="submit" form="game-form" value="Red Victory">
+        <!-- <button id="confirm-red-victory">Confirm</button> -->
     </div>
     <style src=""></style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

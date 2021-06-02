@@ -56,13 +56,13 @@ app.post("/new-game", async (req, res) => {
 
 app.post('/game-results', async (req, res) => {
     console.log(req.body);
-    let gameObject = rating.getScoreAdjust(req.body);
+    // let gameObject = rating.getScoreAdjust(req.body);
     
-    // archive game into game db
-    const newGame = new Game(gameObject);
-    await newGame.save();
+    // // archive game into game db
+    // const newGame = new Game(gameObject);
+    // await newGame.save();
 
-    updatePlayerScores(gameObject);
+    // updatePlayerScores(gameObject);
 
     
     // res.json(gameObject);
