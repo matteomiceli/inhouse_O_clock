@@ -22,7 +22,7 @@ $('select').on('change', (e) => {
             scoreCell.html(score);
 
             // write value to position input
-            $(`#red-top-value`).value = score;
+            $(`#red-top-value`).value(score);
 
             updateTotals(team);
             favourite();
