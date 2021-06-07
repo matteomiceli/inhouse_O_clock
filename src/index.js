@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const port = 8080; // default port to listen
-const db = require('./database');
+
 const { Player, updatePlayerScores } = require('./models/playerModel');
 const Game = require('./models/gameModel');
 const rating = require('./controllers/playerRating');
@@ -17,6 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.static(__dirname + '/public'));
 
+// routes
+// app.use()
 
 
 app.get("/", (req, res) => {
