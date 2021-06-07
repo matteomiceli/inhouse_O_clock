@@ -18,11 +18,11 @@ $('select').on('change', (e) => {
             let roleTarget = e.target.name;
 
             // write score to cell
-            let scoreCell = $("#" + roleTarget + '-score');
+            let scoreCell = $(`#${roleTarget}-score`);
             scoreCell.html(score);
 
             // write value to position input
-            $(`#red-top-value`).value(score);
+            $(`#${roleTarget}-value`).val(score);
 
             updateTotals(team);
             favourite();

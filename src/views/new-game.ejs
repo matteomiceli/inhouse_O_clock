@@ -38,11 +38,12 @@
                         </td>
                         <!-- perhaps change red-scores and blu-scores to classes? -->
                         <td name="red-scores" id="red-top-score"></td>
-                        <input type="hidden" name="red-top-value" id="red-top-value" form="game-form" value="90">
+                        <input type="hidden" name="red-top-value" id="red-top-value" form="game-form">
                         <td>
                             Top
                         </td>
                         <td name="blu-scores" id="blu-top-score"></td>
+                        <input type="hidden" name="blu-top-value" id="blu-top-value" form="game-form">
                         <td>
                             <select name="blu-top" id="blu-top" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
@@ -66,11 +67,13 @@
                              </select>
                         </td>
                         <td name="red-scores" id="red-jung-score"></td>
+                        <input type="hidden" name="red-jung-value" id="red-jung-value" form="game-form">
                         <td>
                             jung
                         </td>
 
                         <td name="blu-scores" id="blu-jung-score"></td>
+                        <input type="hidden" name="blu-jung-value" id="blu-jung-value" form="game-form">
                         <td>
                             <select name="blu-jung" id="blu-jung" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
@@ -94,11 +97,13 @@
                              </select>
                         </td>
                         <td name="red-scores" id="red-mid-score"></td>
+                        <input type="hidden" name="red-mid-value" id="red-mid-value" form="game-form">
                         <td>
                             mid
                         </td>
 
                         <td name="blu-scores" id="blu-mid-score"></td>
+                        <input type="hidden" name="blu-mid-value" id="blu-mid-value" form="game-form">
                         <td>
                             <select name="blu-mid" id="blu-mid" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
@@ -122,11 +127,13 @@
                              </select>
                         </td>
                         <td name="red-scores" id="red-adc-score"></td>
+                        <input type="hidden" name="red-adc-value" id="red-adc-value" form="game-form">
                         <td>
                             adc
                         </td>
 
                         <td name="blu-scores" id="blu-adc-score"></td>
+                        <input type="hidden" name="blu-adc-value" id="blu-adc-value" form="game-form">
                         <td>
                             <select name="blu-adc" id="blu-adc" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
@@ -150,10 +157,12 @@
                              </select>
                         </td>
                         <td name="red-scores" id="red-sup-score"></td>
+                        <input type="hidden" name="red-sup-value" id="red-sup-value" form="game-form">
                         <td>
                             sup
                         </td>
                         <td name="blu-scores" id="blu-sup-score"></td>
+                        <input type="hidden" name="blu-sup-value" id="blu-sup-value" form="game-form">
                         <td>
                             <select name="blu-sup" id="blu-sup" class="blu-select" form="game-form">
                                 <option disabled selected value>--</option>
@@ -219,9 +228,9 @@
         <!-- <button id="confirm-blue-victory">Confirm</button> -->
     </div>
     <div class="red-modal">
-        <img src="/img/close.svg" alt="close button" class="close-modal">
+        <img src="/img/close.svg" alt="close button" name="blue" class="close-modal">
         <p>Confirm red as winning Team?</p>
-        <input type="submit" form="game-form" value="Red Victory">
+        <input type="submit" form="game-form" name="red" value="Red Victory">
         <!-- <button id="confirm-red-victory">Confirm</button> -->
     </div>
     <style src=""></style>
