@@ -78,7 +78,9 @@ function favourite() {
         $("#favourite-percent").remove();
     }
 
-    // console.log(redProb + '  ' + blueProb);
+    $('#red-prob').val(redProb);
+    $('#blue-prob').val(blueProb);
+    
     return { red: redProb, blue: blueProb }
 }
 
