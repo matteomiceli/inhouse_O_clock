@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const port = 8080; // default port to listen
 
+const LoL = require('./routes/LoL');
+
 const { Player, updatePlayerScores } = require('./models/playerModel');
 const Game = require('./models/gameModel');
 const rating = require('./controllers/playerRating');
@@ -18,7 +20,7 @@ app.use(express.urlencoded());
 app.use(express.static(__dirname + '/public'));
 
 // routes
-// app.use()
+app.use('/LoL', LoL);
 
 
 app.get("/", (req, res) => {
