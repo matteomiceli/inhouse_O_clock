@@ -8,7 +8,7 @@ $('select').on('change', (e) => {
 
 
     // fetch player score from db and append to score cell
-    $.post("/new-game",
+    $.post("/LoL/new-game",
         {
             player: alias,
             position: position

@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const { Player, updatePlayerScores } = require('../models/playerModel');
 const Game = require('../models/gameModel');
-const rating = require('../controllers/playerRating');
+const rating = require('../controllers/scoreAdjustController');
 const { check, validationResult  } = require('express-validator');
+const createGameDataObject = require('../controllers/gameController')
 
 router.get('/', (req, res) => {
     res.render('LoL');
@@ -42,6 +43,7 @@ router.post("/new-game", async (req, res) => {
 
 router.post('/game-results', async (req, res) => {
     console.log(req.body);
+    createGameDataObject(req.body);
     // let gameObject = rating.getScoreAdjust(req.body);
     
     // // archive game into game db

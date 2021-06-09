@@ -4,7 +4,7 @@
 // new_rating = rating + k-score (score(1 or 0) - expected score);
 
 function getScoreAdjust(gameData) {
-    let k = 16;
+    const k = 16;
     if (gameData.winningTeam == 'red') {
         let redProb = gameData.probability.red;
         let redScoreAdjust = k * (1 - redProb);
