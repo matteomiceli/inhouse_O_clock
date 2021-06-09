@@ -6,8 +6,6 @@
     "express-validator": "^6.11.1",
     "mongodb": "^3.6.6",
     "mongoose": "^5.12.6",
-    "nedb": "^1.8.0",
-    "node-sass": "^6.0.0",
     "path": "^0.12.7",
     "scss": "^0.2.4"
   },
@@ -29,5 +27,8 @@
     "url": "https://github.com/matteomiceli/inhouse_O_clock/issues"
   },
   "homepage": "https://github.com/matteomiceli/inhouse_O_clock#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^2.1.4"
+  }
 }
