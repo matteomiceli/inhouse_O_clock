@@ -15,7 +15,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js"
+    "dev": "npm run build && nodemon ./src/index.js",
+    "build": "npx tailwindcss-cli@latest build -o ./src/public/css/tailwind.css"
   },
   "repository": {
     "type": "git",
