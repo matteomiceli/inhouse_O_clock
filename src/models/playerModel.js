@@ -27,7 +27,7 @@ async function updatePlayerScores(gameObject) {
         let redTeam = gameObject.gameData.red;
         let redScore = gameObject.redScore;
 
-        let blueTeam = gameObject.gameData.blu;
+        let blueTeam = gameObject.gameData.blue;
         let blueScore = gameObject.blueScore;
 
         // red team [winners]
@@ -66,7 +66,7 @@ async function updatePlayerScores(gameObject) {
         let redTeam = gameObject.gameData.red;
         let redScore = gameObject.redScore;
 
-        let blueTeam = gameObject.gameData.blu;
+        let blueTeam = gameObject.gameData.blue;
         let blueScore = gameObject.blueScore;
 
         // red team [losers]

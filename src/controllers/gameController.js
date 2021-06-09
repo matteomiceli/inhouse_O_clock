@@ -3,7 +3,21 @@
 function createGameDataObject(formData) {
     return gameData = {
         winningTeam: formData['win-red'] ? 'red' : 'blue',
-        
+        red: {
+            top: { alias: formData['red-top'],  score: formData['red-top-value'] },
+            jung: { alias: formData['red-jung'],  score: formData['red-jung-value'] },
+            mid: { alias: formData['red-mid'],  score: formData['red-mid-value'] },
+            adc: { alias: formData['red-adc'],  score: formData['red-adc-value'] },
+            sup: { alias: formData['red-sup'],  score: formData['red-sup-value'] }
+        },
+        blue: {
+            top: { alias: formData['blu-top'], score: formData['blu-top-value'] },
+            jung: { alias: formData['blu-jung'], score: formData['blu-jung-value'] },
+            mid: { alias: formData['blu-mid'], score: formData['blu-mid-value'] },
+            adc: { alias: formData['blu-adc'], score: formData['blu-adc-value'] },
+            sup: { alias: formData['blu-sup'], score: formData['blu-sup-value'] },
+        },
+        probability: { red: formData['red-prob'], blue: formData['blue-prob'] }
     }
 }
 

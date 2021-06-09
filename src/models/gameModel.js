@@ -14,7 +14,7 @@ const gameSchema = new Schema({
             adc: { alias: String, score: String },
             sup: { alias: String, score: String }
         },
-        blu: {
+        blue: {
             top: { alias: String, score: String },
             jung: { alias: String, score: String },
             mid: { alias: String, score: String },

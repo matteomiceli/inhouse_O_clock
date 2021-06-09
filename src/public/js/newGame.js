@@ -48,6 +48,7 @@ function updateTotals(team) {
         })
     } else if (team == 'blu') {
         let sum = 0;
+        
         $("td[name='blu-scores']").each((i, val) => {
             let score = val.innerHTML;
 
@@ -80,8 +81,6 @@ function favourite() {
 
     $('#red-prob').val(redProb);
     $('#blue-prob').val(blueProb);
-    
-    return { red: redProb, blue: blueProb }
 }
 
 // modals
