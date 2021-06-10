@@ -13,7 +13,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-        'league-bg': "url('/img/league_bg.jpg')"
+        'league-bg': "url('/img/league_bg.jpg')",
+        'league-banner': "url('/img/league-banner.jpg')"
       }),
       fontFamily: {
         body: ['Roboto', 'sans-serif'],

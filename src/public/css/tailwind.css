@@ -4289,6 +4289,10 @@ video {
   background-image: url('/img/league_bg.jpg');
 }
 
+.bg-league-banner{
+  background-image: url('/img/league-banner.jpg');
+}
+
 .from-transparent{
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -35969,6 +35973,10 @@ video {
     background-image: url('/img/league_bg.jpg');
   }
 
+  .sm\:bg-league-banner{
+    background-image: url('/img/league-banner.jpg');
+  }
+
   .sm\:from-transparent{
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -67477,6 +67485,10 @@ video {
 
   .md\:bg-league-bg{
     background-image: url('/img/league_bg.jpg');
+  }
+
+  .md\:bg-league-banner{
+    background-image: url('/img/league-banner.jpg');
   }
 
   .md\:from-transparent{
@@ -98989,6 +99001,10 @@ video {
     background-image: url('/img/league_bg.jpg');
   }
 
+  .lg\:bg-league-banner{
+    background-image: url('/img/league-banner.jpg');
+  }
+
   .lg\:from-transparent{
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -130499,6 +130515,10 @@ video {
     background-image: url('/img/league_bg.jpg');
   }
 
+  .xl\:bg-league-banner{
+    background-image: url('/img/league-banner.jpg');
+  }
+
   .xl\:from-transparent{
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -162007,6 +162027,10 @@ video {
 
   .\32xl\:bg-league-bg{
     background-image: url('/img/league_bg.jpg');
+  }
+
+  .\32xl\:bg-league-banner{
+    background-image: url('/img/league-banner.jpg');
   }
 
   .\32xl\:from-transparent{
