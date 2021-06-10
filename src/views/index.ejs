@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
     <title>Inhouse O'clock</title>
     <!-- harcoded match code -- 3820524447 -->
 </head>
-<body>
-    <h1>Throwers Welcome</h1>
-    <h2>Choose Game</h2>
-    <nav class="navbar">
-        <a href="/LoL">League of Legends</a>
+<body class="bg-gray-800 text-white">
+
+    <nav class="navbar bg-int-blue py-2 px-4 flex justify-between items-center">
+        <img src="/img/logo_white.svg" alt="int-house logo" class="max-h-7">
+        <img src="/img/menu.svg" alt="menu icon" class="h-8 cursor-pointer">
     </nav>
+
+    <main class="flex flex-col items-center">
+        <div class="flex flex-col items-center justify-center h-80 w-full bg-int-blue px-4">
+            <h1 class="text-5xl font-heading text-center">Throwers Welcome</h1>
+            <h4 class="text-lg font-body font-bold mt-2 text-center">Compete against your friends in custom leagues</h4>
+        </div>
+        <h2 class="font-heading text-3xl mt-12 mb-6">Games</h2>
+
+        <div class="games-container flex justify-center items-center h-auto w-full mb-16">
+            <a href="/LoL" class="h-64 w-4/5 bg-league-bg bg-cover rounded-2xl transition-colors duration-300 ease-in-out">
+                <div class="flex justify-center items-center h-full w-full bg-black bg-opacity-75 hover:bg-opacity-40 active:bg-opacity-50 rounded-2xl transition-fill duration-300 ease-in-out">
+                    <img src="/img/league_icon.png" alt="league of legends icon" class="h-28">
+                </div>
+            </a>
+        </div>
+        
+    </main>
+    <footer class="bg-blue  mt-12 h-24 bg-int-blue">
+
+    </footer>
 </body>
 </html>
