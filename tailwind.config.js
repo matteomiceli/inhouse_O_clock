@@ -22,7 +22,8 @@ module.exports = {
       },
       colors: {
         'int-red': '#b4200f',
-        'int-blue': '#2583ffff'
+        'int-blue': '#2583ffff',
+        'int-blue-light': '#4294ff'
       },
     },
   },
