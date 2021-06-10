@@ -14,7 +14,7 @@
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="logo_white.svg"
-   inkscape:export-filename="/home/matteo/Documents/Projects/inthouse/src/public/img/logo_black.png"
+   inkscape:export-filename="/home/matteo/Documents/Projects/inhouse_O_clock/src/public/img/logo_white.png"
    inkscape:export-xdpi="93.150002"
    inkscape:export-ydpi="93.150002">
   <defs
@@ -49,18 +49,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.27847111"
-     inkscape:cx="211.80496"
-     inkscape:cy="-16.614403"
+     inkscape:zoom="0.68413523"
+     inkscape:cx="335.3358"
+     inkscape:cy="-20.557119"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer5"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="960"
+     inkscape:window-width="1920"
      inkscape:window-height="1053"
      inkscape:window-x="0"
-     inkscape:window-y="343"
+     inkscape:window-y="27"
      inkscape:window-maximized="0"
      showguides="false"
      fit-margin-top="0"
@@ -75,7 +75,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -93,13 +93,15 @@
        y="-145.02068"
        ry="6.3747654" />
     <rect
-       style="fill:#991c0d;fill-opacity:1;stroke:none;stroke-width:3.59264;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="fill:#991c0d;fill-opacity:1;stroke:none;stroke-width:6.48068;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect1486-2"
-       width="74.758705"
+       width="243.2628"
        height="46.072258"
-       x="-22.409512"
+       x="-190.9136"
        y="-145.02068"
-       ry="6.3747654" />
+       ry="6.3747654"
+       inkscape:export-xdpi="93.150002"
+       inkscape:export-ydpi="93.150002" />
     <text
        xml:space="preserve"
        style="font-size:6.35px;line-height:1.25;font-family:'Heading Pro Wide Trial';-inkscape-font-specification:'Heading Pro Wide Trial';letter-spacing:0px;stroke-width:0.264583"
@@ -129,7 +131,7 @@
          id="tspan74"
          x="-0.054195523"
          y="44.028137"
-         style="font-size:28.6507px;fill:#ffffff;stroke-width:0.2528;">int_house</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:900;font-stretch:normal;font-size:28.6507px;font-family:'Heading Pro Wide Trial';-inkscape-font-specification:'Heading Pro Wide Trial Heavy Italic';fill:#ffffff;stroke-width:0.2528">int_house</tspan></text>
     <circle
        style="fill:#ffffff;fill-opacity:1;stroke-width:2.74256;stroke-linecap:round;paint-order:markers stroke fill"
        id="path2379"

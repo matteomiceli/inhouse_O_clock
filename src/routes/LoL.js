@@ -54,8 +54,12 @@ router.post('/game-results', async (req, res) => {
     res.json(gameObject);
 })
 
+router.get('player', async (req, res) => {
+    
+});
+
 // player creation
-router.post("/player-created", async (req, res) => {
+router.post("/player", async (req, res) => {
     let playerObj = req.body;
 
     if (playerObj.password == 'tf') {

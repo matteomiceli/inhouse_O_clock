@@ -14,7 +14,7 @@
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="logo_black.svg"
-   inkscape:export-filename="/home/matteo/Documents/Projects/inthouse/src/public/img/logo_black.png"
+   inkscape:export-filename="/home/matteo/Documents/Projects/inhouse_O_clock/src/public/img/logo_black.png"
    inkscape:export-xdpi="93.150002"
    inkscape:export-ydpi="93.150002">
   <defs
@@ -53,14 +53,14 @@
      inkscape:cx="211.80496"
      inkscape:cy="-16.614403"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer5"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
      inkscape:window-height="1053"
      inkscape:window-x="0"
-     inkscape:window-y="377"
+     inkscape:window-y="27"
      inkscape:window-maximized="0"
      showguides="false"
      fit-margin-top="0"
@@ -149,7 +149,7 @@
          id="tspan74"
          x="-0.054195523"
          y="44.028137"
-         style="font-size:28.6507px;fill:#000000;stroke-width:0.2528">int_house</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:900;font-stretch:normal;font-size:28.6507px;font-family:'Heading Pro Wide Trial';-inkscape-font-specification:'Heading Pro Wide Trial Heavy Italic';fill:#000000;stroke-width:0.2528">int_house</tspan></text>
     <circle
        style="fill:#ffffff;fill-opacity:1;stroke-width:2.74256;stroke-linecap:round;paint-order:markers stroke fill"
        id="path2379"
