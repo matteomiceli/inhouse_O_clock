@@ -54,8 +54,8 @@ router.post('/game-results', async (req, res) => {
     res.json(gameObject);
 })
 
-router.get('player', async (req, res) => {
-    
+router.get('player/:alias', async (req, res) => {
+    // return a single player from the database
 });
 
 // player creation
