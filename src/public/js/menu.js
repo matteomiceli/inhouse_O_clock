@@ -12,5 +12,3 @@ menuBtn.click(() => {
 
     })
 })
-
-console.log()

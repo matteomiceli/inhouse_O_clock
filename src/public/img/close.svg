@@ -28,21 +28,35 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1536"
+   inkscape:window-width="1584"
    inkscape:window-height="1053"
    id="namedview5"
    showgrid="false"
    showguides="true"
    inkscape:guide-bbox="true"
-   inkscape:zoom="14.167845"
-   inkscape:cx="30.481501"
-   inkscape:cy="19.633169"
-   inkscape:window-x="384"
-   inkscape:window-y="27"
+   inkscape:zoom="7.0839225"
+   inkscape:cx="26.412534"
+   inkscape:cy="36.868172"
+   inkscape:window-x="336"
+   inkscape:window-y="377"
    inkscape:window-maximized="0"
-   inkscape:current-layer="Layer_1" />
-<path
-   style="fill:#000000;stroke-width:0.968869"
-   d="M 58.688493,52.16279 36.887966,30.361293 58.570291,8.6789675 c 1.768187,-1.7691553 1.768187,-4.6370083 0,-6.4051948 -1.769155,-1.76818631 -4.636039,-1.76818631 -6.405194,0 L 30.482771,23.956098 8.8014156,2.2737727 c -1.7691553,-1.76818631 -4.6360395,-1.76818631 -6.4051948,0 -1.76915526,1.7691553 -1.76915526,4.6370084 0,6.4051948 L 24.077577,30.361293 2.2751122,52.16279 c -1.76915527,1.769154 -1.76915527,4.636039 0,6.405194 0.8845776,0.884578 2.0433453,1.326382 3.2030818,1.326382 1.1597365,0 2.3185042,-0.441804 3.2030818,-1.326382 L 30.482771,36.766488 52.283299,58.567984 c 0.884578,0.884578 2.043345,1.326382 3.203082,1.326382 1.159736,0 2.318504,-0.441804 3.203082,-1.326382 1.767218,-1.768186 1.767218,-4.63604 -9.7e-4,-6.405194 z"
-   id="path2" />
-</svg>
+   inkscape:current-layer="Layer_1"
+   inkscape:document-rotation="0" />
+
+<rect
+   style="fill:#000000;stroke:none;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
+   id="rect834-3"
+   width="73.021599"
+   height="6.7805767"
+   x="-36.553581"
+   y="-46.454861"
+   ry="3.3902884"
+   transform="rotate(135)" /><rect
+   style="fill:#000000;stroke:none;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
+   id="rect834-3-6"
+   width="73.021599"
+   height="6.7805767"
+   x="6.5537715"
+   y="-3.433069"
+   ry="3.3902884"
+   transform="rotate(45)" /></svg>

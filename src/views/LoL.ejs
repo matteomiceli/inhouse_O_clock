@@ -35,11 +35,33 @@
        
         <h2 class="font-heading text-3xl mt-12 mb-6">Standings</h2>
         <div class="container">
-            <div class="game-bracket">
-    
-            </div>
             <div class="player-pool">
-                
+                <table class="player-pool-table">
+                    <thead>
+                        <tr>
+                            <th>Summoner</th>
+                            <th>Top</th>
+                            <th>Jungle</th>
+                            <th>Mid</th>
+                            <th>ADC</th>
+                            <th>Support</th>
+                            <th>W/L</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(i=0; i < players.length; i++) { %>
+                            <tr>
+                              <td><%= players[i].alias %></td>
+                              <td><%= players[i].posRatings.top %></td>
+                              <td><%= players[i].posRatings.jung %></td>
+                              <td><%= players[i].posRatings.mid %></td>
+                              <td><%= players[i].posRatings.adc%></td>
+                              <td><%= players[i].posRatings.sup %></td>
+                              <td><%= players[i].wins %> / <%= players[i].losses %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>

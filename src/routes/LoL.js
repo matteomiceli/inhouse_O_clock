@@ -6,8 +6,16 @@ const rating = require('../controllers/scoreAdjustController');
 const { check, validationResult  } = require('express-validator');
 const createGameDataObject = require('../controllers/gameController')
 
-router.get('/', (req, res) => {
-    res.render('LoL');
+router.get('/', async (req, res) => {
+    await Player.find({}, (err, data) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        let players = data;
+        // res.json(data)
+        res.render("LoL", { players: players });
+    });
 });
 
 
