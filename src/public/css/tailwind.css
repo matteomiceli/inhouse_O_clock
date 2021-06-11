@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 /*! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -11579,7 +11581,7 @@ video {
 }
 
 .font-body{
-  font-family: Roboto, sans-serif;
+  font-family: Noto Sans JP, sans-serif;
 }
 
 .font-heading{
@@ -43439,7 +43441,7 @@ video {
   }
 
   .sm\:font-body{
-    font-family: Roboto, sans-serif;
+    font-family: Noto Sans JP, sans-serif;
   }
 
   .sm\:font-heading{
@@ -75129,7 +75131,7 @@ video {
   }
 
   .md\:font-body{
-    font-family: Roboto, sans-serif;
+    font-family: Noto Sans JP, sans-serif;
   }
 
   .md\:font-heading{
@@ -106819,7 +106821,7 @@ video {
   }
 
   .lg\:font-body{
-    font-family: Roboto, sans-serif;
+    font-family: Noto Sans JP, sans-serif;
   }
 
   .lg\:font-heading{
@@ -138509,7 +138511,7 @@ video {
   }
 
   .xl\:font-body{
-    font-family: Roboto, sans-serif;
+    font-family: Noto Sans JP, sans-serif;
   }
 
   .xl\:font-heading{
@@ -170199,7 +170201,7 @@ video {
   }
 
   .\32xl\:font-body{
-    font-family: Roboto, sans-serif;
+    font-family: Noto Sans JP, sans-serif;
   }
 
   .\32xl\:font-heading{

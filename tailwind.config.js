@@ -17,7 +17,7 @@ module.exports = {
         'league-banner': "url('/img/league-banner.jpg')"
       }),
       fontFamily: {
-        body: ['Roboto', 'sans-serif'],
+        body: ['Noto Sans JP', 'sans-serif'],
         heading: ['Anton', 'sans-serif']
       },
       colors: {

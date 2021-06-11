@@ -7,34 +7,34 @@
     <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
     <title>New Player</title>
 </head>
-<body class="bg-gray-800 text-white">
-    <nav class="navbar bg-int-blue py-2 px-4 flex justify-between items-center">
+<body class="bg-gray-800 text-white font-body">
+    <header class="navbar bg-int-blue py-2 px-4 flex justify-between items-center">
         <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-7"></a>
         <img src="/img/menu.svg" alt="menu icon" class="h-8 cursor-pointer">
-    </nav>
+    </header>
     <main class="flex flex-col justify-center items-center">
         <div class="w-4/5">
             <h1 class="font-heading text-3xl mt-12 mb-6">Create a new player</h1>
             <form action="/player" method="post">
                 <div class="form-field">
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-full" type="text" name="name" id="name" placeholder="Name" required>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-full" type="text" name="name" id="name" placeholder="Name" required>
                 </div>
                 <div class="form-field">
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-full mt-2" type="text" name="alias" id="alias" placeholder="Summoner Name" required >
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-full mt-2" type="text" name="alias" id="alias" placeholder="Summoner Name" required >
                 </div>
                 <div class="form-field mt-6 mb-2">
                     <label class="font-body text-md font-bold" for="top">Position Ratings (1-100): </label>
                     
                 </div>
                 <div class="ratings flex flex-row flex-wrap justify-between">
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="top" id="top" class="form-role" placeholder="Top" required>
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="jung" id="jung" class="form-role" placeholder="Jung" required>
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="mid" id="mid" class="form-role" placeholder="Mid" equired>
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="adc" id="adc" class="form-role" placeholder="ADC" equired>
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="sup" id="sup" class="form-role" placeholder="Sup" equired>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="top" id="top" class="form-role" placeholder="Top" required>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="jung" id="jung" class="form-role" placeholder="Jung" required>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="mid" id="mid" class="form-role" placeholder="Mid" equired>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="adc" id="adc" class="form-role" placeholder="ADC" equired>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-12 flex-grow mr-2 mb-2" type="text" name="sup" id="sup" class="form-role" placeholder="Sup" equired>
                 </div>
                 <div class="form-field mt-4">
-                    <input class="rounded bg-gray-700 py-1 px-2 text-gray-100 w-20" type="text" name="password" id="password" placeholder="PIN" required>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-24" type="text" name="password" id="password" placeholder="PIN" required>
                 </div>
                 <div class="w-full">
                     <input class="cursor-pointer flex items-center justify-around bg-int-blue w-36 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-300 ease-in-out font-bold mx-auto mt-8" type="submit" value="Create Player">

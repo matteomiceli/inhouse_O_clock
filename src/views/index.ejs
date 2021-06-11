@@ -9,21 +9,25 @@
     <title>Int-house</title>
     <!-- harcoded match code -- 3820524447 -->
 </head>
-<body class="bg-gray-800 text-white">
+<body class="bg-gray-800 text-white font-body">
 
-    <nav class="navbar bg-int-blue py-2 px-4 flex justify-between items-center">
+    <header class="navbar bg-int-blue w-screen py-2 px-4 flex justify-between items-center">
         <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-7"></a>
         <img src="/img/menu.svg" alt="menu icon" class="h-8 cursor-pointer">
-    </nav>
+        <nav class="flex flex-col absolute overflow-hidden top-12 right-full bg-white rounded-l-xl w-4/5 px-4 py-8">
+            <a class="text-xl font-body font-bold text-int-blue" href="/">Home</a>
+            <a class="text-xl font-body font-bold text-int-blue mt-6" href="/LoL">League of Legends</a>
+            <a class="text-xl font-body font-bold text-int-blue mt-6" href="#">About</a>
+        </nav>
+    </header>
 
     <main class="flex flex-col items-center">
         <div class="flex flex-col items-center justify-center h-80 w-full bg-int-blue px-4">
             <h1 class="text-5xl font-heading text-center">Throwers Welcome</h1>
             <h4 class="text-m font-body font-bold mt-2 text-center">Compete against your friends</h4>
         </div>
-        <h2 class="font-heading text-4xl mt-12 mb-6">Games</h2>
 
-        <div class="games-container flex justify-center items-center h-auto w-full mb-16">
+        <div class="games-container flex justify-center items-center h-auto w-full my-16">
             <a href="/LoL" class="h-64 w-4/5 bg-league-bg bg-cover rounded-2xl transition-colors duration-300 ease-in-out">
                 <div class="flex justify-center items-center h-full w-full bg-black bg-opacity-75 hover:bg-opacity-40 active:bg-opacity-50 rounded-2xl transition-fill duration-300 ease-in-out">
                     <img src="/img/league_icon.png" alt="league of legends icon" class="h-28">
