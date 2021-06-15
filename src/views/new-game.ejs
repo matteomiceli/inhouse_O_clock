@@ -14,21 +14,21 @@
     </header>
     <form action="game-results" id="game-form" method="POST"></form>
     <div class="container">
-        <div class="game-bracket">
-            <table class="game-table">
+        <div class="game-bracket mt-12">
+            <table class="game-table mx-auto">
                 <thead>
                     <tr>
-                        <th>Red Team</th>
+                        <th class="font-heading text-2xl pb-2">Red</th>
+                        <th class="w-10"></th>
                         <th></th>
-                        <th>Position</th>
-                        <th></th>
-                        <th>Blue Team</th>
+                        <th class="w-10"></th>
+                        <th class="font-heading text-2xl">Blue</th>
                     </tr>
                 </thead>
                 <tbody><tr></tr>
                     <tr>
                         <td>
-                            <select name="red-top" id="red-top" class="red-select" form="game-form">
+                            <select name="red-top" id="red-top" class="red-select bg-red-500 font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -38,15 +38,15 @@
                              </select>
                         </td>
                         <!-- perhaps change red-scores and blu-scores to classes? -->
-                        <td name="red-scores" id="red-top-score"></td>
+                        <td name="red-scores" id="red-top-score" class="text-lg text-center"></td>
                         <input type="hidden" name="red-top-value" id="red-top-value" form="game-form">
                         <td>
                             Top
                         </td>
-                        <td name="blu-scores" id="blu-top-score"></td>
+                        <td name="blu-scores" id="blu-top-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-top-value" id="blu-top-value" form="game-form">
                         <td>
-                            <select name="blu-top" id="blu-top" class="blu-select" form="game-form">
+                            <select name="blu-top" id="blu-top" class="blu-select bg-int-blue font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -58,7 +58,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-jung" id="red-jung" class="red-select" form="game-form">
+                            <select name="red-jung" id="red-jung" class="red-select bg-red-500 font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -67,16 +67,16 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-jung-score"></td>
+                        <td name="red-scores" id="red-jung-score" class="text-lg text-center"></td>
                         <input type="hidden" name="red-jung-value" id="red-jung-value" form="game-form">
                         <td>
                             jung
                         </td>
 
-                        <td name="blu-scores" id="blu-jung-score"></td>
+                        <td name="blu-scores" id="blu-jung-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-jung-value" id="blu-jung-value" form="game-form">
                         <td>
-                            <select name="blu-jung" id="blu-jung" class="blu-select" form="game-form">
+                            <select name="blu-jung" id="blu-jung" class="blu-select bg-int-blue font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -88,7 +88,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-mid" id="red-mid" class="red-select" form="game-form">
+                            <select name="red-mid" id="red-mid" class="red-select bg-red-500 font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -97,16 +97,16 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-mid-score"></td>
+                        <td name="red-scores" id="red-mid-score" class="text-lg text-center"></td>
                         <input type="hidden" name="red-mid-value" id="red-mid-value" form="game-form">
                         <td>
                             mid
                         </td>
 
-                        <td name="blu-scores" id="blu-mid-score"></td>
+                        <td name="blu-scores" id="blu-mid-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-mid-value" id="blu-mid-value" form="game-form">
                         <td>
-                            <select name="blu-mid" id="blu-mid" class="blu-select" form="game-form">
+                            <select name="blu-mid" id="blu-mid" class="blu-select bg-int-blue font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -118,7 +118,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-adc" id="red-adc" class="red-select" form="game-form">
+                            <select name="red-adc" id="red-adc" class="red-select bg-red-500 font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -127,16 +127,16 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-adc-score"></td>
+                        <td name="red-scores" id="red-adc-score" class="text-lg text-center"></td>
                         <input type="hidden" name="red-adc-value" id="red-adc-value" form="game-form">
                         <td>
                             adc
                         </td>
 
-                        <td name="blu-scores" id="blu-adc-score"></td>
+                        <td name="blu-scores" id="blu-adc-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-adc-value" id="blu-adc-value" form="game-form">
                         <td>
-                            <select name="blu-adc" id="blu-adc" class="blu-select" form="game-form">
+                            <select name="blu-adc" id="blu-adc" class="blu-select bg-int-blue font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -148,7 +148,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-sup" id="red-sup" class="red-select" form="game-form">
+                            <select name="red-sup" id="red-sup" class="red-select bg-red-500 font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -157,15 +157,15 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-sup-score"></td>
+                        <td name="red-scores" id="red-sup-score" class="text-lg text-center"></td>
                         <input type="hidden" name="red-sup-value" id="red-sup-value" form="game-form">
                         <td>
                             sup
                         </td>
-                        <td name="blu-scores" id="blu-sup-score"></td>
+                        <td name="blu-scores" id="blu-sup-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-sup-value" id="blu-sup-value" form="game-form">
                         <td>
-                            <select name="blu-sup" id="blu-sup" class="blu-select" form="game-form">
+                            <select name="blu-sup" id="blu-sup" class="blu-select bg-int-blue font-body p-1 rounded" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -178,9 +178,9 @@
                     <tr>
                         <!-- append favoured element to this if red team favourite -->
                         <td id="red-side"></td>
-                        <td id="red-total-score"></td>
+                        <td id="red-total-score" class="text-xl text-center font-bold"></td>
                         <td>- VS -</td>
-                        <td id="blu-total-score"></td>
+                        <td id="blu-total-score" class="text-xl text-center"></td>
                         <!-- append favoured element to this if blue team favourite -->
                         <td id="blue-side"></td>
                     </tr>
@@ -190,8 +190,8 @@
             <input type="hidden" name="blue-prob" id="blue-prob" form="game-form">
         </div>
         <div class="vict-buttons">
-            <button id="red-victory">Red Team Victory</button>
-            <button id="blue-victory">Blue Team Victory</button>
+            <button class="bg-red-500 p-2 rounded hover:bg-red-400" id="red-victory">Red Team Victory</button>
+            <button class="bg-int-blue p-2 rounded hover:bg-int-blue-light" id="blue-victory">Blue Team Victory</button>
         </div>
         <br>
         <br>
@@ -225,13 +225,13 @@
         </div>
     </div>
     <div class="blue-modal hidden">
-        <img src="/img/close.svg" alt="close button" class="close-modal h-3 cursor-pointer">
+        <img src="/img/close.svg" alt="close button" class="close-modal h-5 cursor-pointer">
         <p>Confirm blue as winning Team?</p>
         <input type="submit" form="game-form" name="blue" value="Blue Victory">
         <!-- <button id="confirm-blue-victory">Confirm</button> -->
     </div>
     <div class="red-modal hidden">
-        <img src="/img/close.svg" alt="close button" name="win-blue" class="close-modal h-3 cursor-pointer">
+        <img src="/img/close.svg" alt="close button" name="win-blue" class="close-modal h-5 cursor-pointer">
         <p>Confirm red as winning Team?</p>
         <input type="submit" form="game-form" name="win-red" value="Red Victory">
         <!-- <button id="confirm-red-victory">Confirm</button> -->

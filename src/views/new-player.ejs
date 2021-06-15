@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="/js/playerValidation.js"></script>
     <title>New Player</title>
 </head>
 <body class="bg-gray-800 text-white font-body">
@@ -15,29 +17,29 @@
     <main class="flex flex-col justify-center items-center">
         <div class="w-4/5">
             <h1 class="font-heading text-3xl mt-12 mb-6">Create a new player</h1>
-            <form action="/player" method="post">
+            <form action="/LoL/player" method="post">
                 <div class="form-field">
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-full outline-none focus:bg-gray-600" type="text" name="name" id="name" placeholder="Name" required>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-full outline-none focus:bg-gray-600" type="text" name="name" id="name" placeholder="Name">
                 </div>
                 <div class="form-field">
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-full mt-4 outline-none focus:bg-gray-600" type="text" name="alias" id="alias" placeholder="Summoner Name" required >
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-full mt-4 outline-none focus:bg-gray-600" type="text" name="alias" id="alias" placeholder="Summoner Name">
                 </div>
-                <div class="form-field mt-12 mb-2">
+                <div class="form-field mt-10 mb-2">
                     <label class="font-body text-md font-bold" for="top">Position Ratings (1-100): </label>
                     
                 </div>
                 <div class="ratings flex flex-row flex-wrap justify-between">
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="top" id="top" class="form-role" placeholder="Top" required>
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="jung" id="jung" class="form-role" placeholder="Jung" required>
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="mid" id="mid" class="form-role" placeholder="Mid" equired>
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="adc" id="adc" class="form-role" placeholder="ADC" equired>
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="sup" id="sup" class="form-role" placeholder="Sup" equired>
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="top" id="top" class="form-role" placeholder="Top">
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="jung" id="jung" class="form-role" placeholder="Jung">
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="mid" id="mid" class="form-role" placeholder="Mid">
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="adc" id="adc" class="form-role" placeholder="ADC">
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-16 flex-grow mr-4 mb-4 text-sm outline-none focus:bg-gray-600" type="text" name="sup" id="sup" class="form-role" placeholder="Sup">
                 </div>
-                <div class="form-field mt-8">
-                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-24 outline-none focus:bg-gray-600" type="text" name="password" id="password" placeholder="PIN" required>
+                <div class="form-field mt-6">
+                    <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-24 outline-none focus:bg-gray-600" type="password" name="password" id="password" placeholder="PIN">
                 </div>
                 <div class="w-full">
-                    <input class="cursor-pointer flex items-center justify-around bg-int-blue w-36 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-300 ease-in-out font-bold mx-auto mt-8" type="submit" value="Create Player">
+                    <input class="cursor-pointer flex items-center justify-around bg-int-blue w-36 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-100 ease-in-out font-bold mx-auto mt-8" type="submit" value="Create Player">
                 </div>
             </form>
         </div>

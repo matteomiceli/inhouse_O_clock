@@ -62,21 +62,32 @@ router.post('/game-results', async (req, res) => {
     res.json(gameObject);
 })
 
-router.get('player/:alias', async (req, res) => {
+router.get('/player/:alias', async (req, res) => {
     // return a single player from the database
+    const alias = req.params.alias; 
+
+    await Player.find({ alias: alias }, (err, data) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        let player = data[0]
+       
+        res.render('player', { player: player, newPlayer: false })
+    });
 });
 
 // player creation
 router.post("/player", async (req, res) => {
     let playerObj = req.body;
 
-    if (playerObj.password == 'tf') {
+    if (playerObj.password == 'tf69') {
         const newPlayer = new Player({
             name: playerObj.name,
             alias: playerObj.alias,
             posRatings: {
                 top: playerObj.top,
-                jung: playerObj.jung,
+                jung: playerObj.jung,   
                 mid: playerObj.mid,
                 adc: playerObj.adc,
                 sup: playerObj.sup
@@ -87,7 +98,7 @@ router.post("/player", async (req, res) => {
         });
     
         await newPlayer.save();
-        res.render('player-created', { player: newPlayer });
+        res.render('player', { player: newPlayer, newPlayer: true });
         return;
     }
     res.render('error-auth'); 

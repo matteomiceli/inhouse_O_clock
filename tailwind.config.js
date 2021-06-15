@@ -22,6 +22,7 @@ module.exports = {
       },
       colors: {
         'int-red': '#b4200f',
+        'int-red-light': '',
         'int-blue': '#2583ffff',
         'int-blue-light': '#59a1ff'
       },
