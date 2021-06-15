@@ -80,28 +80,24 @@ router.get('/player/:alias', async (req, res) => {
 // player creation
 router.post("/player", async (req, res) => {
     let playerObj = req.body;
+    const newPlayer = new Player({
+        name: playerObj.name,
+        alias: playerObj.alias,
+        posRatings: {
+            top: playerObj.top,
+            jung: playerObj.jung,   
+            mid: playerObj.mid,
+            adc: playerObj.adc,
+            sup: playerObj.sup
+        },
+        wins: 0,
+        losses: 0,
+        created: new Date()
+    });
 
-    if (playerObj.password == 'tf69') {
-        const newPlayer = new Player({
-            name: playerObj.name,
-            alias: playerObj.alias,
-            posRatings: {
-                top: playerObj.top,
-                jung: playerObj.jung,   
-                mid: playerObj.mid,
-                adc: playerObj.adc,
-                sup: playerObj.sup
-            },
-            wins: 0,
-            losses: 0,
-            created: new Date()
-        });
-    
-        await newPlayer.save();
-        res.render('player', { player: newPlayer, newPlayer: true });
-        return;
-    }
-    res.render('error-auth'); 
+    await newPlayer.save();
+    res.render('player', { player: newPlayer, newPlayer: true });
+    return;
 })
 
 

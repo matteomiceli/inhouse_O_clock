@@ -20,7 +20,7 @@ form.submit((e) => {
     }
 
     if(inputAlias.val() === '' || inputAlias.val() === undefined) {
-        errors['alias'] = 'enter a valid alias';
+        errors['alias'] = 'enter a valid summoner name';
     }
 
     if(inputTop.val() === '' || inputTop.val() === undefined || inputTop.val() > 100 || inputTop.val() < 1 ) {
@@ -47,8 +47,23 @@ form.submit((e) => {
         errors['pin'] = 'enter a valid authorization code';      
     }
 
-    // if errors is empty submit
+    // if errors is empty submit -- otherwise, display errors
     if (Object.entries(errors).length > 0) {
         e.preventDefault();
+        if (errors.name) {
+            $('#nameError').html(errors.name);
+        }
+
+        if (errors.alias) {
+            $('#aliasError').html(errors.alias);
+        }
+
+        if (errors.top || errors.jung || errors.mid || errors.adc || errors.sup) {
+            $('#ratingError').html(errors.top);
+        }
+
+        if (errors.pin) {
+            $('#pinError').html(errors.pin);
+        }
     }
 });

@@ -71,10 +71,10 @@ function favourite() {
 
     if (redProb > blueProb) {
         $("#favourite-percent").remove();
-        $('#red-side').append(`<span id='favourite-percent'>+${((redProb * 100) - 50).toFixed(2)}%</span>`);
+        $('#red-side').append(`<span id='favourite-percent' class='text-green-300 pr-2'>+${((redProb * 100) - 50).toFixed(2)}%</span>`);
     } else if (redProb < blueProb) {
         $("#favourite-percent").remove();
-        $('#blue-side').append(`<span id='favourite-percent'>+${((blueProb * 100) - 50).toFixed(2)}%</span>`);
+        $('#blue-side').append(`<span id='favourite-percent' class='text-green-300 pl-2'>+${((blueProb * 100) - 50).toFixed(2)}%</span>`);
     } else {
         $("#favourite-percent").remove();
     }
