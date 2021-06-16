@@ -1,28 +1,10 @@
-* {
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+.red-modal, .blue-modal {
+    height: calc(100% - 48px);
 }
 
-.game-table {
-    
-}
-
-.player-pool-table {
-    border-collapse: collapse;
-}
-
-td, th {
-    border: 1px solid black;
-}
-
-.blue-modal {
-    display: none;
-}
-
-.red-modal {
-    display: none;
-}
-
-.close-modal {
-    height: 16px;
-    cursor: pointer;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

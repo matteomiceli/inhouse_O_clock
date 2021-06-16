@@ -71,10 +71,10 @@ function favourite() {
 
     if (redProb > blueProb) {
         $("#favourite-percent").remove();
-        $('#red-side').append(`<span id='favourite-percent'>+${((redProb * 100) - 50).toFixed(2)}%</span>`);
+        $('#red-side').append(`<span id='favourite-percent' class='text-green-300 pr-2'>+${((redProb * 100) - 50).toFixed(2)}%</span>`);
     } else if (redProb < blueProb) {
         $("#favourite-percent").remove();
-        $('#blue-side').append(`<span id='favourite-percent'>+${((blueProb * 100) - 50).toFixed(2)}%</span>`);
+        $('#blue-side').append(`<span id='favourite-percent' class='text-green-300 pl-2'>+${((blueProb * 100) - 50).toFixed(2)}%</span>`);
     } else {
         $("#favourite-percent").remove();
     }
@@ -83,20 +83,93 @@ function favourite() {
     $('#blue-prob').val(blueProb);
 }
 
+// function to validate game form, returns boolean -> true = valid
+function validateGame() {
+    let valid = true;
+    let errors = {};
+    let selects = [];
+    let cache = {};
+
+    // all password validation is on the frontend for now == perhaps change in production
+    if ($('#password').val() != 'tf69') {
+        valid = false;
+        errors['pin'] = 'enter valid authorization code';
+    }
+
+    $('.red-select').each(((i, select) => {
+        if (select.value == '') {
+            valid = false;
+            errors['table'] = 'positions cannot be left blank';
+            
+        } else {
+            selects.push(select);
+        }
+    }))
+
+    $('.blu-select').each(((i, select) => {
+        if (select.value == '') {
+            valid = false;
+            errors['table'] = 'positions cannot be left blank';
+            
+        } else {
+            selects.push(select);
+        }
+    }))
+
+    if(!errors.table) {
+        for (let i = 0; i < selects.length; i++) {
+            const select = selects[i];
+            if(cache[select]) {
+                valid = false;
+                errors['duplicate'] = 'players can only be entered once per team';
+                break;
+            }
+            cache[select] = true;
+        }
+    }
+
+    return { valid: valid, errors: errors }
+}
+
 // modals
 $('.close-modal').on('click', () => {
     $('.blue-modal').css('display', 'none');
     $('.red-modal').css('display', 'none');
+    $('.overlay').css('display', 'none');
 })
 
 $('#red-victory').on('click', () => {
-    $('.blue-modal').css('display', 'none');
-    $('.red-modal').css('display', 'block');
+    let gameVal = validateGame();
+    if (gameVal.valid) {
+        $('#pinError').css('display', 'none');
+        $('#tableError').css('display', 'none');
+        $('.overlay').css('display', 'block');
+        $('.blue-modal').css('display', 'none');
+        $('.red-modal').css('display', 'flex');
+    } else if (gameVal.errors.pin) {
+        $('#pinError').html(gameVal.errors.pin);
+    } else if (gameVal.errors.table) {
+        $('#tableError').html(gameVal.errors.table);
+    } else if (gameVal.errors.duplicate) {
+        $('#tableError').html(gameVal.errors.duplicate);
+    }
 })
 
 $('#blue-victory').on('click', () => {
-    $('.red-modal').css('display', 'none');
-    $('.blue-modal').css('display', 'block');
+    let gameVal = validateGame();
+    if (gameVal.valid) {
+        $('#pinError').css('display', 'none');
+        $('#tableError').css('display', 'none');
+        $('.overlay').css('display', 'none');
+        $('.red-modal').css('display', 'none');
+        $('.blue-modal').css('display', 'flex');
+    } else if (gameVal.errors.pin) {
+        $('#pinError').html(gameVal.errors.pin);
+    } else if (gameVal.errors.table) {
+        $('#tableError').html(gameVal.errors.table);
+    } else if (gameVal.errors.duplicate) {
+        $('#tableError').html(gameVal.errors.duplicate);
+    }
 })
 
 // $('#confirm-red-victory').on('click', () => {

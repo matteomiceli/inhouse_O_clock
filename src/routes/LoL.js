@@ -6,8 +6,16 @@ const rating = require('../controllers/scoreAdjustController');
 const { check, validationResult  } = require('express-validator');
 const createGameDataObject = require('../controllers/gameController')
 
-router.get('/', (req, res) => {
-    res.render('LoL');
+router.get('/', async (req, res) => {
+    await Player.find({}, (err, data) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        let players = data;
+        // res.json(data)
+        res.render("LoL", { players: players });
+    });
 });
 
 
@@ -42,6 +50,7 @@ router.post("/new-game", async (req, res) => {
 });
 
 router.post('/game-results', async (req, res) => {
+    console.log(req.body);
     let gameData = createGameDataObject(req.body);
     let gameObject = rating.getScoreAdjust(gameData);
     
@@ -54,31 +63,42 @@ router.post('/game-results', async (req, res) => {
     res.json(gameObject);
 })
 
-// player creation
-router.post("/player-created", async (req, res) => {
-    let playerObj = req.body;
+router.get('/player/:alias', async (req, res) => {
+    // return a single player from the database
+    const alias = req.params.alias; 
 
-    if (playerObj.password == 'tf') {
-        const newPlayer = new Player({
-            name: playerObj.name,
-            alias: playerObj.alias,
-            posRatings: {
-                top: playerObj.top,
-                jung: playerObj.jung,
-                mid: playerObj.mid,
-                adc: playerObj.adc,
-                sup: playerObj.sup
-            },
-            wins: 0,
-            losses: 0,
-            created: new Date()
-        });
-    
-        await newPlayer.save();
-        res.render('player-created', { player: newPlayer });
-        return;
-    }
-    res.render('error-auth'); 
+    await Player.find({ alias: alias }, (err, data) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        let player = data[0]
+       
+        res.render('player', { player: player, newPlayer: false })
+    });
+});
+
+// player creation
+router.post("/player", async (req, res) => {
+    let playerObj = req.body;
+    const newPlayer = new Player({
+        name: playerObj.name,
+        alias: playerObj.alias,
+        posRatings: {
+            top: playerObj.top,
+            jung: playerObj.jung,   
+            mid: playerObj.mid,
+            adc: playerObj.adc,
+            sup: playerObj.sup
+        },
+        wins: 0,
+        losses: 0,
+        created: new Date()
+    });
+
+    await newPlayer.save();
+    res.render('player', { player: newPlayer, newPlayer: true });
+    return;
 })
 
 

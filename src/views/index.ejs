@@ -4,14 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inhouse O'clock</title>
+    <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="/img/favicon.png"/>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="/js/menu.js"></script>
+    <title>Int-house</title>
     <!-- harcoded match code -- 3820524447 -->
 </head>
-<body>
-    <h1>Throwers Welcome</h1>
-    <h2>Choose Game</h2>
-    <nav class="navbar">
-        <a href="/LoL">League of Legends</a>
-    </nav>
+<body class="bg-gray-800 text-white font-body">
+
+    <header class="navbar bg-int-blue w-screen py-2 px-4 flex justify-between items-center">
+        <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-7"></a>
+        <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-7 cursor-pointer">
+        <nav class="absolute top-12 right-0 hidden bg-white rounded-l-xl h-2/5 w-4/6 p-6">
+            <div class="flex flex-col h-full justify-between">
+                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white" href="/">Home</a>
+                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white" href="/LoL">League of Legends</a>
+                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white" href="#">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex flex-col items-center">
+        <div class="flex flex-col items-center justify-center h-80 w-full bg-int-blue px-4">
+            <h1 class="text-5xl font-heading text-center">Throwers Welcome</h1>
+            <h4 class="text-m font-body font-bold mt-2 text-center">Compete against your friends</h4>
+        </div>
+
+        <div class="games-container flex justify-center items-center h-auto w-full my-16">
+            <a href="/LoL" class="h-64 w-4/5 bg-league-bg bg-cover rounded-2xl transition-colors duration-300 ease-in-out">
+                <div class="flex justify-center items-center h-full w-full bg-black bg-opacity-75 hover:bg-opacity-40 active:bg-opacity-50 rounded-2xl transition-fill duration-300 ease-in-out">
+                    <img src="/img/league_icon.png" alt="league of legends icon" class="h-28">
+                </div>
+            </a>
+        </div>
+        
+    </main>
+    <footer class="bg-blue  mt-12  bg-int-blue">
+
+    </footer>
 </body>
 </html>
