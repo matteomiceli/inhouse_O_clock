@@ -50,6 +50,7 @@ router.post("/new-game", async (req, res) => {
 });
 
 router.post('/game-results', async (req, res) => {
+    console.log(req.body);
     let gameData = createGameDataObject(req.body);
     let gameObject = rating.getScoreAdjust(gameData);
     

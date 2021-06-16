@@ -46,7 +46,7 @@
                         <td name="blu-scores" id="blu-top-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-top-value" id="blu-top-value" form="game-form">
                         <td>
-                            <select name="blu-top" id="blu-top" class="red-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-top" id="blu-top" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -76,7 +76,7 @@
                         <td name="blu-scores" id="blu-jung-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-jung-value" id="blu-jung-value" form="game-form">
                         <td>
-                            <select name="blu-jung" id="blu-jung" class="red-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-jung" id="blu-jung" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -106,7 +106,7 @@
                         <td name="blu-scores" id="blu-mid-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-mid-value" id="blu-mid-value" form="game-form">
                         <td>
-                            <select name="blu-mid" id="blu-mid" class="red-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-mid" id="blu-mid" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -136,7 +136,7 @@
                         <td name="blu-scores" id="blu-adc-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-adc-value" id="blu-adc-value" form="game-form">
                         <td>
-                            <select name="blu-adc" id="blu-adc" class="red-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-adc" id="blu-adc" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -165,7 +165,7 @@
                         <td name="blu-scores" id="blu-sup-score" class="text-lg text-center"></td>
                         <input type="hidden" name="blu-sup-value" id="blu-sup-value" form="game-form">
                         <td>
-                            <select name="blu-sup" id="blu-sup" class="red-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-sup" id="blu-sup" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -186,6 +186,7 @@
                     </tr>
                 </tbody>
             </table>
+            <p id="tableError" class="text-sm italic text-red-500 w-5/6 m-auto"></p>
             <input type="hidden" name="red-prob" id="red-prob" form="game-form">
             <input type="hidden" name="blue-prob" id="blue-prob" form="game-form">
             <div class="w-5/6 m-auto">
