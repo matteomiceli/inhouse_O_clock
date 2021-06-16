@@ -198,31 +198,31 @@
             <button class="bg-red-500 p-2 rounded hover:bg-red-400" id="red-victory">Red Team Victory</button>
             <button class="bg-int-blue p-2 rounded hover:bg-int-blue-light" id="blue-victory">Blue Team Victory</button>
         </div>
-        <br>
-        <br>
-        <div class="player-pool">
-            <table class="player-pool-table">
+
+
+        <div class="player-pool my-16 bg-gray-900 p-3 rounded-xl mx-3">
+            <table align="center" class="player-pool-table table-fixed">
                 <thead>
-                    <tr>
-                        <th>Summoner</th>
-                        <th>Top</th>
-                        <th>Jungle</th>
-                        <th>Mid</th>
-                        <th>ADC</th>
-                        <th>Support</th>
-                        <th>W/L</th>
+                    <tr class="h-12">
+                        <th class="font-bold">Summoner</th>
+                        <th align="right" class="w-8"><img class="w-5" src="/img/positions/Top_icon.svg" alt="top icon"></th>
+                        <th align="right" class="w-8"><img class="w-5" src="/img/positions/Jungle_icon.svg" alt="jungle icon"></th>
+                        <th align="right" class="w-8"><img class="w-5" src="/img/positions/Middle_icon.svg" alt="middle icon"></th>
+                        <th align="right" class="w-8"><img class="w-5" src="/img/positions/Bot_icon.svg" alt="adc icon"></th>
+                        <th align="right" class="w-8"><img class="w-5" src="/img/positions/Support_icon.svg" alt="support icon"></th>
+                        <th align="right" class="w-16 font-bold">W / L</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% for(i=0; i < players.length; i++) { %>
-                        <tr>
-                          <td><%= players[i].alias %></td>
-                          <td><%= players[i].posRatings.top %></td>
-                          <td><%= players[i].posRatings.jung %></td>
-                          <td><%= players[i].posRatings.mid %></td>
-                          <td><%= players[i].posRatings.adc%></td>
-                          <td><%= players[i].posRatings.sup %></td>
-                          <td><%= players[i].wins %> / <%= players[i].losses %></td>
+                        <tr class="text-sm">
+                          <td align="right" class="text-blue-300 hover:text-blue-200"><a href="/LoL/player/<%- players[i].alias %>"><%= players[i].alias %></a></td>
+                          <td align="right" class="text-gray-300"><%= players[i].posRatings.top %></td>
+                          <td align="right" class="text-gray-300"><%= players[i].posRatings.jung %></td>
+                          <td align="right" class="text-gray-300"><%= players[i].posRatings.mid %></td>
+                          <td align="right" class="text-gray-300"><%= players[i].posRatings.adc%></td>
+                          <td align="right" class="text-gray-300"><%= players[i].posRatings.sup %></td>
+                          <td align="right" class="text-gray-300"><span class="text-green-300"><%= players[i].wins %></span> / <span class="text-red-300"><%= players[i].losses %></span></td>
                         </tr>
                     <% } %>
                 </tbody>
