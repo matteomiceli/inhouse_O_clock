@@ -188,8 +188,12 @@
             </table>
             <input type="hidden" name="red-prob" id="red-prob" form="game-form">
             <input type="hidden" name="blue-prob" id="blue-prob" form="game-form">
+            <div class="w-5/6 m-auto">
+                <input class="rounded bg-gray-700 py-2 px-2 text-gray-100 w-24 outline-none focus:bg-gray-600" type="password" name="password" id="password" placeholder="PIN" form="game-form">
+                <p id="pinError" class="text-sm italic text-red-500"></p>
+            </div>
         </div>
-        <div class="vict-buttons flex w-5/6 mx-auto justify-around">
+        <div class="vict-buttons flex w-5/6 mx-auto justify-between mt-6">
             <button class="bg-red-500 p-2 rounded hover:bg-red-400" id="red-victory">Red Team Victory</button>
             <button class="bg-int-blue p-2 rounded hover:bg-int-blue-light" id="blue-victory">Blue Team Victory</button>
         </div>
@@ -224,17 +228,23 @@
             </table>
         </div>
     </div>
-    <div class="blue-modal hidden">
-        <img src="/img/close.svg" alt="close button" class="close-modal h-5 cursor-pointer">
-        <p>Confirm blue as winning Team?</p>
-        <input type="submit" form="game-form" name="blue" value="Blue Victory">
-        <!-- <button id="confirm-blue-victory">Confirm</button> -->
+    <div class="blue-modal hidden z-50 absolute top-12 w-screen bg bg-black bg-opacity-60 justify-center mt-3/6">
+        <div class="p-6 bg-white w-4/5 h-48 mt-48 rounded-lg flex flex-col items-center">
+            <div class="w-full flex justify-end -mt-2 -mr-2 mb-6">
+                <img src="/img/close.svg" alt="close button" name="win-blue" class="close-modal h-5 cursor-pointer">                
+            </div>
+            <p class="text-black mb-6">Confirm red as winning Team?</p>
+            <input class="cursor-pointer bg-int-blue w-36 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-100 ease-in-out" type="submit" form="game-form" name="blue" value="Blue Victory">
+        </div>
     </div>
-    <div class="red-modal hidden">
-        <img src="/img/close.svg" alt="close button" name="win-blue" class="close-modal h-5 cursor-pointer">
-        <p>Confirm red as winning Team?</p>
-        <input type="submit" form="game-form" name="win-red" value="Red Victory">
-        <!-- <button id="confirm-red-victory">Confirm</button> -->
+    <div class="red-modal hidden z-50 absolute top-12 w-screen bg bg-black bg-opacity-60 justify-center mt-3/6">
+        <div class="p-6 bg-white w-4/5 h-48 mt-48 rounded-lg flex flex-col items-center">
+            <div class="w-full flex justify-end -mt-2 -mr-2 mb-6">
+                <img src="/img/close.svg" alt="close button" name="win-blue" class="close-modal h-5 cursor-pointer">                
+            </div>
+            <p class="text-black mb-6">Confirm red as winning Team?</p>
+            <input class="cursor-pointer bg-red-500 w-36 rounded-lg p-2 hover:bg-red-400 transition-colors duration-100 ease-in-out" type="submit" form="game-form" name="win-red" value="Red Victory">
+        </div>
     </div>
     <style src=""></style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

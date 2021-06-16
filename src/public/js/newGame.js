@@ -83,20 +83,38 @@ function favourite() {
     $('#blue-prob').val(blueProb);
 }
 
+// function to validate game form, returns boolean -> true = valid
+function validateGame(winner) {
+    let valid = true;
+
+    if ($('#password').val() != 'tf69') {
+        valid = false;
+        $('#pinError').html('enter valid authorization code');
+    }
+    return valid;
+}
+
 // modals
 $('.close-modal').on('click', () => {
     $('.blue-modal').css('display', 'none');
     $('.red-modal').css('display', 'none');
+    $('.overlay').css('display', 'none');
 })
 
 $('#red-victory').on('click', () => {
-    $('.blue-modal').css('display', 'none');
-    $('.red-modal').css('display', 'block');
+    if (validateGame('red')) {
+        $('.overlay').css('display', 'block');
+        $('.blue-modal').css('display', 'none');
+        $('.red-modal').css('display', 'flex');
+    }
 })
 
 $('#blue-victory').on('click', () => {
-    $('.red-modal').css('display', 'none');
-    $('.blue-modal').css('display', 'block');
+    if (validateGame('blue')) {
+        $('.overlay').css('display', 'none');
+        $('.red-modal').css('display', 'none');
+        $('.blue-modal').css('display', 'flex');
+    }
 })
 
 // $('#confirm-red-victory').on('click', () => {
