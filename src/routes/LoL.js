@@ -106,4 +106,69 @@ router.get("/new-player", (req, res) => {
     res.render('new-player');
 })
 
+router.get('/game', (req, res) => {
+    const gameObj = {
+        "gameData": {
+            "red": {
+                "top": {
+                    "alias": "skoutNova",
+                    "score": "56"
+                },
+                "jung": {
+                    "alias": "Pesus sesus",
+                    "score": "67"
+                },
+                "mid": {
+                    "alias": "Pesus sesus",
+                    "score": "70"
+                },
+                "adc": {
+                    "alias": "Pesus sesus",
+                    "score": "25"
+                },
+                "sup": {
+                    "alias": "Pesus sesus",
+                    "score": "95"
+                }
+            },
+            "blue": {
+                "top": {
+                    "alias": "Pesus sesus",
+                    "score": "77"
+                },
+                "jung": {
+                    "alias": "Pesus sesus",
+                    "score": "67"
+                },
+                "mid": {
+                    "alias": "Pesus sesus",
+                    "score": "70"
+                },
+                "adc": {
+                    "alias": "Pesus sesus",
+                    "score": "25"
+                },
+                "sup": {
+                    "alias": "Pesus sesus",
+                    "score": "95"
+                }
+            },
+            "probability": {
+                "red": "0.38141587791096926",
+                "blue": "0.6185841220890307"
+            },
+            "winningTeam": "red"
+        },
+        "redScore": 10,
+        "blueScore": -10,
+        "date": {
+            "$date": "2021-06-09T08:44:56.462Z"
+        }
+    }
+
+    console.log(gameObj);
+
+    res.render('game', { game: gameObj });
+})
+
 module.exports = router;
