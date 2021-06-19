@@ -20,14 +20,18 @@
         </nav>
     </header>
     <main class="">
+        <% if (game.gameData.winningTeam == 'red') { %>
+            <h1 class="mt-12 text-5xl font-heading text-red-500 text-center">VICTORY </h1>
+        <% } else { %>
+            <h1 class="mt-12 text-5xl font-heading text-int-blue text-center">VICTORY </h1>
+        <% } %>
         <div class="mt-12 mx-4 rounded-xl p-4 bg-gray-900">
-            <% if (game.gameData.winningTeam == 'red') { %>
-                <h1 class="text-3xl font-heading text-red-500 text-center">Red Team Victory</h1>
-            <% } %>
+           
              <div class="teams my-8 grid grid-cols-2">
                 <div class="red">
                     <!-- <h3 class="text-xl text-red-500 font-heading">Red</h3> -->
                     <p class="text-red-500 text-sm"><%= game.gameData.red.top.alias %><span class="text-white"> - <%= parseInt(game.gameData.red.top.score) + parseInt(game.redScore) %></span></p>
+                    <p class="text-red-500 text-sm"><%= game.gameData.red.jung.alias %><span class="text-white"> - <%= parseInt(game.gameData.red.jung.score) + parseInt(game.redScore) %></span></p>
                 </div>
                 <div class="blue">
                     <!-- <h3 class="text-xl text-red-500 font-heading">Blue</h3> -->

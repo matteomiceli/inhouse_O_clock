@@ -157,7 +157,7 @@ router.get('/game', (req, res) => {
                 "red": "0.38141587791096926",
                 "blue": "0.6185841220890307"
             },
-            "winningTeam": "red"
+            "winningTeam": "blue"
         },
         "redScore": 10,
         "blueScore": -10,
