@@ -10,7 +10,7 @@
 <body class="bg-gray-800 text-white font-body">
     <header class="navbar bg-int-blue w-screen py-2 px-4 flex justify-between items-center">
         <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-7"></a>
-        <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-8 cursor-pointer">
+        <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-7 cursor-pointer">
         <nav class="absolute top-12 right-0 hidden bg-white rounded-l-xl h-2/5 w-4/6 p-6">
             <div class="flex flex-col h-full justify-between">
                 <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white" href="/">Home</a>
@@ -27,15 +27,29 @@
         <% } %>
         <div class="mt-12 mx-4 rounded-xl p-4 bg-gray-900">
            
-             <div class="teams my-8 grid grid-cols-2">
-                <div class="red">
+             <div class="teams my-8 grid grid-cols-2 gap-3">
+                <div class="red px-2">
+                    <h1 class="flex font-heading text-red-500 text-2xl mb-2 justify-center">
+                        RED
+                        <% if (game.redScore > 0) { %>
+                            <span class="font-body text-green-400 text-base ml-1">+<%= game.redScore %></span>
+                        <% } %>
+                    </h1>
                     <!-- <h3 class="text-xl text-red-500 font-heading">Red</h3> -->
-                    <p class="text-red-500 text-sm"><%= game.gameData.red.top.alias %><span class="text-white"> - <%= parseInt(game.gameData.red.top.score) + parseInt(game.redScore) %></span></p>
-                    <p class="text-red-500 text-sm"><%= game.gameData.red.jung.alias %><span class="text-white"> - <%= parseInt(game.gameData.red.jung.score) + parseInt(game.redScore) %></span></p>
+                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.top.alias %>"><%= game.gameData.red.top.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.top.score) + parseInt(game.redScore) %></span></p>
+                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.jung.alias %>"><%= game.gameData.red.jung.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.jung.score) + parseInt(game.redScore) %></span></p>
                 </div>
-                <div class="blue">
+                <div class="blue px-2">
+                    <h1 class="flex font-heading text-int-blue text-2xl mb-2 justify-center">
+                        BLUE
+                        <% if (game.blueScore > 0) { %>
+                            <span class="font-body text-green-400 text-base ml-1">+<%= game.blueScore %></span>
+                        <% } else { %>
+                            <span class="font-body text-red-400 text-base ml-1"><%= game.blueScore %></span>
+                        <% } %>
+                    </h1>
                     <!-- <h3 class="text-xl text-red-500 font-heading">Blue</h3> -->
-                    <p class="text-int-blue text-sm"><%= game.gameData.blue.top.alias %><span class="text-white"> - <%= parseInt(game.gameData.blue.top.score) + parseInt(game.blueScore) %></span></p>
+                    <p class="text-int-blue text-sm text-center"><%= game.gameData.blue.top.alias %><span class="text-white"> - <%= parseInt(game.gameData.blue.top.score) + parseInt(game.blueScore) %></span></p>
                 </div>
              </div>
 

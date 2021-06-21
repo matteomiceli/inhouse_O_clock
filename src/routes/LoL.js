@@ -166,8 +166,6 @@ router.get('/game', (req, res) => {
         }
     }
 
-    console.log(gameObj);
-
     res.render('game', { game: gameObj });
 })
 
