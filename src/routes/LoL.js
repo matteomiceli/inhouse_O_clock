@@ -60,7 +60,7 @@ router.post('/game-results', async (req, res) => {
 
     updatePlayerScores(gameObject);
 
-    res.json(gameObject);
+    res.render('game', { game: gameObject });
 })
 
 router.get('/player/:alias', async (req, res) => {
