@@ -106,6 +106,7 @@ router.get("/new-player", (req, res) => {
     res.render('new-player');
 })
 
+// set param to take in game object (for match history implementation in the future)
 router.get('/game', (req, res) => {
     const gameObj = {
         "gameData": {
