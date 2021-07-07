@@ -5,6 +5,12 @@
     height: calc(100% - 48px);
 }
 
+@media only screen and (min-width: 768px) {
+    nav {
+        display: flex !important;
+    }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
