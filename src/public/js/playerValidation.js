@@ -13,6 +13,14 @@ const pin = $('#password')
 
 // form validation
 form.submit((e) => {
+    // clear previous messages
+    $('#nameError').html('');
+    $('#aliasError').html('');
+    $('#ratingError').html('');
+    $('#pinError').html('');
+
+
+
     let errors = {};
 
     if(inputName.val() === '' || inputName.val() === undefined) {
