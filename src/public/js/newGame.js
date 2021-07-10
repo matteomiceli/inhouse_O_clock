@@ -139,6 +139,10 @@ $('.close-modal').on('click', () => {
 })
 
 $('#red-victory').on('click', () => {
+    // clearing previous error messages
+    $('#pinError').html('');
+    $('#tableError').html('');
+
     let gameVal = validateGame();
     if (gameVal.valid) {
         $('#pinError').css('display', 'none');
@@ -156,6 +160,10 @@ $('#red-victory').on('click', () => {
 })
 
 $('#blue-victory').on('click', () => {
+    // clearing previous error messages
+    $('#pinError').html('');
+    $('#tableError').html('');
+
     let gameVal = validateGame();
     if (gameVal.valid) {
         $('#pinError').css('display', 'none');
@@ -171,60 +179,3 @@ $('#blue-victory').on('click', () => {
         $('#tableError').html(gameVal.errors.duplicate);
     }
 })
-
-// $('#confirm-red-victory').on('click', () => {
-//     gameData = sendGameData('red');
-//     postGameResults(gameData);
-// });
-
-// $('#confirm-blue-victory').on('click', () => {
-//     gameData = sendGameData('blue');
-//     postGameResults(gameData);
-// });
-
-// returns game data
-// function sendGameData(winningTeam) {
-//     const winner = winningTeam;
-
-//     let redScores = {};
-
-//     $("td[name='red-scores']").each((i, score) => {
-//         redScores[score.id] = score.innerHTML;
-//     });
-
-
-//     let bluScores = {};
-
-//     $("td[name='blu-scores']").each((i, score) => {
-//         bluScores[score.id] = score.innerHTML;
-//     });
-
-//     let redTeamMembers = $('.red-select');
-//     let bluTeamMembers = $('.blu-select');
-
-//     return gameData = {
-//         winningTeam: winner,
-//         red: {
-//             top: {alias: redTeamMembers[0].value, score: redScores['red-top-score']},
-//             jung: {alias: redTeamMembers[1].value, score: redScores['red-jung-score']},
-//             mid: {alias: redTeamMembers[2].value, score: redScores['red-mid-score']},
-//             adc: {alias: redTeamMembers[3].value, score: redScores['red-adc-score']},
-//             sup: {alias: redTeamMembers[4].value, score: redScores['red-sup-score']}
-//         },
-//         blu: {
-//             top: {alias: bluTeamMembers[0].value, score: bluScores['blu-top-score']},
-//             jung: {alias: bluTeamMembers[1].value, score: bluScores['blu-jung-score']},
-//             mid: {alias: bluTeamMembers[2].value, score: bluScores['blu-mid-score']},
-//             adc: {alias: bluTeamMembers[3].value, score: bluScores['blu-adc-score']},
-//             sup: {alias: bluTeamMembers[4].value, score: bluScores['blu-sup-score']}
-//         },
-//         probability: favourite(),
-//     }
-// };
-
-// // post data to server, call favourite function to pass probabilities 
-// function postGameResults(data) {
-//     $.post("/game-results", data, (results) => {
-//         console.log(results);
-//     });
-// }
