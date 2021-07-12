@@ -19,7 +19,7 @@
         <div class="flex flex-col items-center justify-center h-72 w-full bg-league-banner bg-cover bg-center lg:h-96">
             <div class="flex-col w-full h-full bg-black bg-opacity-80 flex justify-center items-center">
                 <img class="h-36 lg:h-56" src="/img/lol_logo_text.png" alt="league logo">
-                <div class="flex justify-around mt-6 w-5/6 mx-auto sm:w-3/6 lg:w-2/6">
+                <div class="flex justify-around mt-4 w-5/6 mx-auto sm:w-3/6 lg:w-2/6">
                     <a class="flex items-center justify-around bg-int-blue w-36 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-100 ease-in-out" href="/LoL/new-game">
                         <img class="h-8" src="/img/controller.svg" alt="player icon">
                         <p class="font-bold">New Game</p>
@@ -39,19 +39,19 @@
                 <table align="center" class="player-pool-table table-fixed">
                     <thead>
                         <tr class="h-12 sm:text-xl">
-                            <th class="font-bold">Summoner</th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Top_icon.svg" alt="top icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Jungle_icon.svg" alt="jungle icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Middle_icon.svg" alt="middle icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Bot_icon.svg" alt="adc icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Support_icon.svg" alt="support icon"></th>
-                            <th align="right" class="w-16 sm:w-24 font-bold">W / L</th>
+                            <th class="font-bold pb-4">Summoner</th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Top_icon.svg" alt="top icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Jungle_icon.svg" alt="jungle icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Middle_icon.svg" alt="middle icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Bot_icon.svg" alt="adc icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Support_icon.svg" alt="support icon"></th>
+                            <th align="right" class="w-16 sm:w-24 font-bold pb-5">W / L</th>
                         </tr>
                     </thead>
                     <tbody>
                         <% for(i=0; i < players.length; i++) { %>
                             <tr class="text-sm sm:text-lg lg:text-xl">
-                              <td align="right" class="text-blue-300 hover:text-blue-200"><a href="/LoL/player/<%- players[i].alias %>"><%= players[i].alias %></a></td>
+                              <td align="right" class="text-blue-300 hover:text-blue-200 py-1"><a href="/LoL/player/<%- players[i].alias %>"><%= players[i].alias %></a></td>
                               <td align="right" class="text-gray-300"><%= players[i].posRatings.top %></td>
                               <td align="right" class="text-gray-300"><%= players[i].posRatings.jung %></td>
                               <td align="right" class="text-gray-300"><%= players[i].posRatings.mid %></td>
