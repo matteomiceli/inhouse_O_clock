@@ -6,9 +6,17 @@
   height: calc(100% - 48px);
 }
 
+.hero {
+  height: 384px;
+}
+
 @media only screen and (min-width: 768px) {
   nav {
     display: flex !important;
+  }
+
+  .hero {
+    height: 540px;
   }
 }
 
