@@ -7,7 +7,7 @@
     <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
     <title>Create Game</title>
 </head>
-<body class="bg-gray-800 text-white">
+<body class="bg-gray-800 text-white font-body">
     <header class="navbar bg-int-blue py-2 px-4 flex justify-between items-center">
         <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8"></a>
         <img src="/img/menu.svg" alt="menu icon" class="h-6 cursor-pointer">
@@ -18,17 +18,17 @@
             <table class="game-table mx-auto">
                 <thead>
                     <tr>
-                        <th class="font-heading text-3xl pb-2">Red</th>
-                        <th class="w-12"></th>
+                        <th class="font-heading text-3xl pb-2 md:pb-4 md:text-4xl">Red</th>
+                        <th class="w-12 sm:w-14 md:w-20 xl:w-32"></th>
                         <th></th>
-                        <th class="w-12"></th>
-                        <th class="font-heading text-3xl">Blue</th>
+                        <th class="w-12 sm:w-14 md:w-20 xl:w-32"></th>
+                        <th class="font-heading text-3xl pb-2 md:pb-4 md:text-4xl">Blue</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            <select name="red-top" id="red-top" class="red-select bg-red-500 font-body p-1 rounded w-28" form="game-form">
+                            <select name="red-top" id="red-top" class="red-select bg-red-500 font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -38,15 +38,15 @@
                              </select>
                         </td>
                         <!-- perhaps change red-scores and blu-scores to classes? -->
-                        <td name="red-scores" id="red-top-score" class="text-lg text-center"></td>
+                        <td name="red-scores" id="red-top-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="red-top-value" id="red-top-value" form="game-form">
                         <td>
-                            <img class="w-7 my-1" src="/img/positions/Top_icon.svg" alt="top icon">
+                            <img class="w-7 my-1 md:w-10" src="/img/positions/Top_icon.svg" alt="top icon">
                         </td>
-                        <td name="blu-scores" id="blu-top-score" class="text-lg text-center"></td>
+                        <td name="blu-scores" id="blu-top-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="blu-top-value" id="blu-top-value" form="game-form">
                         <td>
-                            <select name="blu-top" id="blu-top" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-top" id="blu-top" class="blu-select bg-int-blue font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -58,7 +58,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-jung" id="red-jung" class="red-select bg-red-500 font-body p-1 rounded w-28" form="game-form">
+                            <select name="red-jung" id="red-jung" class="red-select bg-red-500 font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -67,16 +67,16 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-jung-score" class="text-lg text-center"></td>
+                        <td name="red-scores" id="red-jung-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="red-jung-value" id="red-jung-value" form="game-form">
                         <td>
-                            <img class="w-8 my-1" src="/img/positions/Jungle_icon.svg" alt="jungle icon">
+                            <img class="w-8 my-1 md:w-10" src="/img/positions/Jungle_icon.svg" alt="jungle icon">
                         </td>
 
-                        <td name="blu-scores" id="blu-jung-score" class="text-lg text-center"></td>
+                        <td name="blu-scores" id="blu-jung-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="blu-jung-value" id="blu-jung-value" form="game-form">
                         <td>
-                            <select name="blu-jung" id="blu-jung" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-jung" id="blu-jung" class="blu-select bg-int-blue font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -88,7 +88,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-mid" id="red-mid" class="red-select bg-red-500 font-body p-1 rounded w-28" form="game-form">
+                            <select name="red-mid" id="red-mid" class="red-select bg-red-500 font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -97,16 +97,16 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-mid-score" class="text-lg text-center"></td>
+                        <td name="red-scores" id="red-mid-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="red-mid-value" id="red-mid-value" form="game-form">
                         <td>
-                            <img class="w-8 my-1" src="/img/positions/Middle_icon.svg" alt="middle icon">
+                            <img class="w-8 my-1 md:w-10" src="/img/positions/Middle_icon.svg" alt="middle icon">
                         </td>
 
-                        <td name="blu-scores" id="blu-mid-score" class="text-lg text-center"></td>
+                        <td name="blu-scores" id="blu-mid-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="blu-mid-value" id="blu-mid-value" form="game-form">
                         <td>
-                            <select name="blu-mid" id="blu-mid" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-mid" id="blu-mid" class="blu-select bg-int-blue font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -118,7 +118,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-adc" id="red-adc" class="red-select bg-red-500 font-body p-1 rounded w-28" form="game-form">
+                            <select name="red-adc" id="red-adc" class="red-select bg-red-500 font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -127,16 +127,16 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-adc-score" class="text-lg text-center"></td>
+                        <td name="red-scores" id="red-adc-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="red-adc-value" id="red-adc-value" form="game-form">
                         <td>
-                            <img class="w-8 my-1" src="/img/positions/Bot_icon.svg" alt="adc icon">
+                            <img class="w-8 my-1 md:w-10" src="/img/positions/Bot_icon.svg" alt="adc icon">
                         </td>
 
-                        <td name="blu-scores" id="blu-adc-score" class="text-lg text-center"></td>
+                        <td name="blu-scores" id="blu-adc-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="blu-adc-value" id="blu-adc-value" form="game-form">
                         <td>
-                            <select name="blu-adc" id="blu-adc" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-adc" id="blu-adc" class="blu-select bg-int-blue font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -148,7 +148,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="red-sup" id="red-sup" class="red-select bg-red-500 font-body p-1 rounded w-28" form="game-form">
+                            <select name="red-sup" id="red-sup" class="red-select bg-red-500 font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -157,15 +157,15 @@
                                 <% } %>
                              </select>
                         </td>
-                        <td name="red-scores" id="red-sup-score" class="text-lg text-center"></td>
+                        <td name="red-scores" id="red-sup-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="red-sup-value" id="red-sup-value" form="game-form">
                         <td>
-                            <img class="w-8 my-1" src="/img/positions/Support_icon.svg" alt="support icon">
+                            <img class="w-8 my-1 md:w-10" src="/img/positions/Support_icon.svg" alt="support icon">
                         </td>
-                        <td name="blu-scores" id="blu-sup-score" class="text-lg text-center"></td>
+                        <td name="blu-scores" id="blu-sup-score" class="text-lg text-center md:text-2xl"></td>
                         <input type="hidden" name="blu-sup-value" id="blu-sup-value" form="game-form">
                         <td>
-                            <select name="blu-sup" id="blu-sup" class="blu-select bg-int-blue font-body p-1 rounded w-28" form="game-form">
+                            <select name="blu-sup" id="blu-sup" class="blu-select bg-int-blue font-body p-1 rounded w-28 sm:w-32 md:w-40 md:py-2 md:mb-3" form="game-form">
                                 <option disabled selected value>--</option>
                                 <% for(i=0; i < players.length; i++) { %>
                             
@@ -177,12 +177,12 @@
                     </tr>
                     <tr>
                         <!-- append favoured element to this if red team favourite -->
-                        <td id="red-side" class="text-right"></td>
-                        <td id="red-total-score" class="text-2xl font-bold text-center"></td>
-                        <td class="h-12 text-center font-bold text-yellow-400">VS</td>
-                        <td id="blu-total-score" class="text-2xl font-bold text-center"></td>
+                        <td id="red-side" class="text-right text-lg"></td>
+                        <td id="red-total-score" class="text-2xl font-bold text-center md:text-3xl"></td>
+                        <td class="h-12 text-center font-bold text-yellow-400 md:text-2xl py-6">VS</td>
+                        <td id="blu-total-score" class="text-2xl font-bold text-center md:text-3xl"></td>
                         <!-- append favoured element to this if blue team favourite -->
-                        <td id="blue-side"></td>
+                        <td id="blue-side" class="text-lg"></td>
                     </tr>
                 </tbody>
             </table>
