@@ -116,20 +116,28 @@ function validateGame() {
         }
     }))
 
-    if(!errors.table) {
-        for (let i = 0; i < selects.length; i++) {
-            const select = selects[i];
-            if(cache[select]) {
-                valid = false;
-                errors['duplicate'] = 'players can only be entered once per team';
-                break;
-            }
-            cache[select] = true;
-        }
-    }
+    // if(!errors.table) {
+    //     for (let i = 0; i < selects.length; i++) {
+    //         const select = selects[i];
+    //         if(cache[select]) {
+    //             valid = false;
+    //             errors['duplicate'] = 'players can only be entered once per team';
+    //             break;
+    //         }
+    //         cache[select] = true;
+    //     }
+    // }
 
     return { valid: valid, errors: errors }
 }
+
+// prevents enter key from submitting form without validation
+$(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
 
 // modals
 $('.close-modal').on('click', () => {

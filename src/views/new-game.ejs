@@ -233,22 +233,25 @@
             </table>
         </div>
     </div>
+
+    <!-- blue victory modal -->
     <div class="blue-modal hidden z-50 absolute top-12 w-screen bg bg-black bg-opacity-60 justify-center mt-3/6">
-        <div class="p-6 bg-white w-4/5 h-48 mt-48 rounded-lg flex flex-col items-center">
+        <div class="p-6 bg-white w-4/5 h-48 mt-48 rounded-lg flex flex-col items-center lg:w-3/6 xl:w-2/6">
             <div class="w-full flex justify-end -mt-2 -mr-2 mb-6">
                 <img src="/img/close.svg" alt="close button" name="win-blue" class="close-modal h-5 cursor-pointer">                
             </div>
-            <p class="text-black mb-6">Confirm red as winning Team?</p>
-            <input class="cursor-pointer bg-int-blue w-36 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-100 ease-in-out" type="submit" form="game-form" name="blue" value="Blue Victory">
+            <p class="text-black mb-6 text-lg">Confirm red as winning Team?</p>
+            <input class="cursor-pointer bg-int-blue w-36 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-100 ease-in-out md:py-3" type="submit" form="game-form" name="blue" value="Blue Victory">
         </div>
     </div>
+    <!-- red victory modal -->
     <div class="red-modal hidden z-50 absolute top-12 w-screen bg bg-black bg-opacity-60 justify-center mt-3/6">
-        <div class="p-6 bg-white w-4/5 h-48 mt-48 rounded-lg flex flex-col items-center">
+        <div class="p-6 bg-white w-4/5 h-48 mt-48 rounded-lg flex flex-col items-center lg:w-3/6 xl:w-2/6">
             <div class="w-full flex justify-end -mt-2 -mr-2 mb-6">
                 <img src="/img/close.svg" alt="close button" name="win-blue" class="close-modal h-5 cursor-pointer">                
             </div>
-            <p class="text-black mb-6">Confirm red as winning Team?</p>
-            <input class="cursor-pointer bg-red-500 w-36 rounded-lg p-2 hover:bg-red-400 transition-colors duration-100 ease-in-out" type="submit" form="game-form" name="win-red" value="Red Victory">
+            <p class="text-black mb-6 text-lg">Confirm red as winning Team?</p>
+            <input class="cursor-pointer bg-red-500 w-36 rounded-lg p-2 hover:bg-red-400 transition-colors duration-100 ease-in-out md:py-3" type="submit" form="game-form" name="win-red" value="Red Victory">
         </div>
     </div>
     <style src=""></style>
