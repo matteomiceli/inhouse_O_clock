@@ -7,6 +7,7 @@ module.exports = {
 //     content: [
 //         './src/**/*.html',
 //         './src/views/*.ejs',
+//         './src/public/js/*.js',
 //     ],
 // },
   darkMode: false, // or 'media' or 'class',
