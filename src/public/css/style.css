@@ -7,6 +7,7 @@
 
 .hero {
     height: 384px;
+    background: radial-gradient(125% 125% at 15% 0%, #2583FF 0%, #A148CB 100%);
 }
 
 @media only screen and (min-width: 768px) {
@@ -16,6 +17,12 @@
 
     .hero {
         height: 540px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .hero {
+        height: 664px;
     }
 }
 
