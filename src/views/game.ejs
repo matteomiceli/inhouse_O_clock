@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
+    <title>Game Results</title>
+</head>
+<body class="bg-gray-800 text-white font-body">
+    <header class="navbar bg-int-blue w-screen py-2 px-4 flex justify-between items-center">
+        <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8"></a>
+        <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-6 cursor-pointer">
+        <nav class="absolute top-12 right-0 hidden bg-white rounded-l-xl h-2/5 w-4/6 p-6">
+            <div class="flex flex-col h-full justify-between">
+                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white" href="/">Home</a>
+                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white" href="/LoL">League of Legends</a>
+                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white" href="#">About</a>
+            </div>
+        </nav>
+    </header>
+    <main class="">
+        <% if (game.gameData.winningTeam == 'red') { %>
+            <h1 class="mt-12 text-5xl font-heading text-red-500 text-center">RED <span class="text-white">VICTORY</span></h1>
+        <% } else { %>
+            <h1 class="mt-12 text-5xl font-heading text-int-blue text-center">BLUE <span class="text-white">VICTORY</span></h1>
+        <% } %>
+        <div class="mt-12 mx-4 rounded-xl p-4 bg-gray-900">
+           
+             <div class="teams my-8 grid grid-cols-2 gap-3">
+                <div class="red px-2">
+                    <h1 class="flex font-heading text-red-500 text-3xl mb-2 justify-center">
+                        RED
+                        <% if (game.redScore > 0) { %>
+                            <span class="font-body text-green-400 text-base ml-1">+<%= game.redScore %></span>
+                        <% } else { %>
+                            <span class="font-body text-red-400 text-base ml-1"><%= game.redScore %></span>
+                        <% } %>
+                    </h1>
+                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.top.alias %>"><%= game.gameData.red.top.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.top.score) + parseInt(game.redScore) %></span></p>
+                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.jung.alias %>"><%= game.gameData.red.jung.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.jung.score) + parseInt(game.redScore) %></span></p>
+                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.mid.alias %>"><%= game.gameData.red.mid.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.mid.score) + parseInt(game.redScore) %></span></p>
+                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.adc.alias %>"><%= game.gameData.red.adc.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.adc.score) + parseInt(game.redScore) %></span></p>
+                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.sup.alias %>"><%= game.gameData.red.sup.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.sup.score) + parseInt(game.redScore) %></span></p>
+                </div>
+                <div class="blue px-2">
+                    <h1 class="flex font-heading text-int-blue text-3xl mb-2 justify-center">
+                        BLUE
+                        <% if (game.blueScore > 0) { %>
+                            <span class="font-body text-green-400 text-base ml-1">+<%= game.blueScore %></span>
+                        <% } else { %>
+                            <span class="font-body text-red-400 text-base ml-1"><%= game.blueScore %></span>
+                        <% } %>
+                    </h1>
+                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.top.alias %>"><%= game.gameData.blue.top.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.top.score) + parseInt(game.blueScore) %></span></p>
+                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.jung.alias %>"><%= game.gameData.blue.jung.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.jung.score) + parseInt(game.blueScore) %></span></p>
+                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.mid.alias %>"><%= game.gameData.blue.mid.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.mid.score) + parseInt(game.blueScore) %></span></p>
+                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.adc.alias %>"><%= game.gameData.blue.adc.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.adc.score) + parseInt(game.blueScore) %></span></p>
+                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.sup.alias %>"><%= game.gameData.blue.sup.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.sup.score) + parseInt(game.blueScore) %></span></p>
+                </div>
+             </div>
+             <% let date = new Date(game.date)%>
+            <h2 class="text-gray-400 font-bold mb-8 text-sm"><%= date.toDateString() %></h2>
+        </div>
+            
+    </main>
+
+    
+    
+</body>
+</html>

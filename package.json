@@ -6,6 +6,7 @@
     "express-validator": "^6.11.1",
     "mongodb": "^3.6.6",
     "mongoose": "^5.12.6",
+    "nodemon": "^2.0.9",
     "path": "^0.12.7",
     "scss": "^0.2.4"
   },
@@ -16,7 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index.js",
     "dev": "npm run build && nodemon ./src/index.js",
-    "build": "npx tailwindcss-cli@latest build ./src/public/css/style.css -o ./src/public/css/tailwind.css"
+    "build": "npx tailwindcss build -i ./src/public/css/style.css -o ./src/public/css/tailwind.css"
   },
   "repository": {
     "type": "git",
