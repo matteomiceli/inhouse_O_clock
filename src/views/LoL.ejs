@@ -33,25 +33,27 @@
             
         </div>
        
-        <h2 class="font-heading text-3xl mt-12 mb-6 sm:text-4xl sm:mt-20">Standings</h2>
+        <h2 class="font-heading text-3xl mt-12 mb-6 lg:text-4xl lg:mt-20">Standings</h2>
         <div class="container">
-            <div class="player-pool mb-16 bg-gray-900 p-3 rounded-xl mx-3 sm:mx-auto sm:w-11/12 sm:py-8 md:w-9/12 lg:w-7/12">
+            <div class="player-pool mb-16 bg-gray-900 p-3 rounded-xl w-11/12 mx-auto sm:py-8 md:w-10/12 lg:w-8/12">
                 <table align="center" class="player-pool-table table-fixed">
                     <thead>
                         <tr class="h-12 sm:text-xl">
-                            <th class="font-bold pb-4">Summoner</th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Top_icon.svg" alt="top icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Jungle_icon.svg" alt="jungle icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Middle_icon.svg" alt="middle icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Bot_icon.svg" alt="adc icon"></th>
-                            <th align="right" class="w-8 sm:w-14 lg:w-16 pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Support_icon.svg" alt="support icon"></th>
-                            <th align="right" class="w-16 sm:w-24 font-bold pb-5">W / L</th>
+                            <th class="font-bold sm:pb-4"></th>
+                            <th class="font-bold sm:pb-4">Summoner</th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 sm:pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Top_icon.svg" alt="top icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 sm:pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Jungle_icon.svg" alt="jungle icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 sm:pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Middle_icon.svg" alt="middle icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 sm:pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Bot_icon.svg" alt="adc icon"></th>
+                            <th align="right" class="w-8 sm:w-14 lg:w-16 sm:pb-5"><img class="w-5 sm:w-7 lg:w-8" src="/img/positions/Support_icon.svg" alt="support icon"></th>
+                            <th align="right" class="w-16 sm:w-24 font-bold sm:pb-5">W / L</th>
                         </tr>
                     </thead>
                     <tbody>
                         <% for(i=0; i < players.length; i++) { %>
                             <tr class="text-sm sm:text-lg lg:text-xl">
-                              <td align="right" class="text-blue-300 hover:text-blue-200 py-1"><a href="/LoL/player/<%- players[i].alias %>"><%= players[i].alias %></a></td>
+                              <td align="right" class="text-white pr-2 md:pr-3"><%= `${i+1}.` %></td>
+                              <td align="left" class="text-blue-300 hover:text-blue-200 py-1"><a href="/LoL/player/<%- players[i].alias %>"><%= players[i].alias %></a></td>
                               <td align="right" class="text-gray-300"><%= players[i].posRatings.top %></td>
                               <td align="right" class="text-gray-300"><%= players[i].posRatings.jung %></td>
                               <td align="right" class="text-gray-300"><%= players[i].posRatings.mid %></td>
