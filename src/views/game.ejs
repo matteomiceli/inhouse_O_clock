@@ -28,6 +28,7 @@
         <div class="mt-12 mx-4 rounded-xl p-4 bg-gray-900">
            
              <div class="teams my-8 grid grid-cols-2 gap-3">
+                <!-- red team -->
                 <div class="red px-2">
                     <h1 class="flex font-heading text-red-500 text-3xl mb-2 justify-center">
                         RED
@@ -43,6 +44,7 @@
                     <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.adc.alias %>"><%= game.gameData.red.adc.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.adc.score) + parseInt(game.redScore) %></span></p>
                     <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.sup.alias %>"><%= game.gameData.red.sup.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.sup.score) + parseInt(game.redScore) %></span></p>
                 </div>
+                <!-- blue team -->
                 <div class="blue px-2">
                     <h1 class="flex font-heading text-int-blue text-3xl mb-2 justify-center">
                         BLUE

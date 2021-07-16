@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const { version } = require('../globals');
 const { Player, updatePlayerScores } = require('../models/playerModel');
 const Game = require('../models/gameModel');
 const rating = require('../controllers/scoreAdjustController');
 const { check, validationResult  } = require('express-validator');
-const createGameDataObject = require('../controllers/gameController')
+const createGameDataObject = require('../controllers/gameController');
+
 
 router.get('/', async (req, res) => {
+    console.log(version)
     await Player.find({}, (err, data) => {
         if (err) {
             console.log(err);
@@ -14,10 +17,9 @@ router.get('/', async (req, res) => {
         }
         let players = data;
         // res.json(data)
-        res.render("LoL", { players: players });
+        res.render("LoL", { players: players, version: version });
     });
 });
-
 
 // game creation
 router.get("/new-game", async (req, res) => {
