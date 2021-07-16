@@ -116,17 +116,17 @@ function validateGame() {
         }
     }))
 
-    if(!errors.table) {
-        for (let i = 0; i < selects.length; i++) {
-            const select = selects[i];
-            if(cache[select]) {
-                valid = false;
-                errors['duplicate'] = 'players can only be entered once per team';
-                break;
-            }
-            cache[select] = true;
-        }
-    }
+    // if(!errors.table) {
+    //     for (let i = 0; i < selects.length; i++) {
+    //         const select = selects[i];
+    //         if(cache[select]) {
+    //             valid = false;
+    //             errors['duplicate'] = 'players can only be entered once per team';
+    //             break;
+    //         }
+    //         cache[select] = true;
+    //     }
+    // }
 
     return { valid: valid, errors: errors }
 }
