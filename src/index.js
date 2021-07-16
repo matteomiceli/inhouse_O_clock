@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const { version } = require('./globals');
 const app = express();
 const port = process.env.PORT || 8080; // default port to listen
 const LoL = require('./routes/LoL');

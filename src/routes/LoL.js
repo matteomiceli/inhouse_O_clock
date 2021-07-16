@@ -9,7 +9,6 @@ const createGameDataObject = require('../controllers/gameController');
 
 
 router.get('/', async (req, res) => {
-    console.log(version)
     await Player.find({}, (err, data) => {
         if (err) {
             console.log(err);
