@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,38 @@
     <script defer src="/js/playerValidation.js"></script>
     <title>New Player</title>
 </head>
+
 <body class="bg-gray-800 text-white font-body">
-    <header class="navbar bg-int-blue py-2 px-4 flex justify-between items-center">
-        <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8"></a>
-        <img src="/img/menu.svg" alt="menu icon" class="h-6 cursor-pointer">
-    </header>
+    <div class="full-screen">
+        <header class="navbar bg-int-blue py-2 px-4 flex justify-between items-center">
+            <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8"></a>
+            <img src="/img/menu.svg" alt="menu icon" class="h-6 cursor-pointer">
+        </header>
+        <main class="pt-16 w-5/6 mx-auto md:w-4/6 lg:w-3/6 h-full">
+            <img class="w-24 mx-auto" src="/img/logo_white.png" alt="int house logo">
+            <p class="mt-8 text-center text-lg font-bold">
+                Compete against your friends in custom e-sports leagues!
+            </p>
+            <p class="mt-12 text-sm italic">
+                Int House is a project still in closed alpha. There is currently only support for one pool of players right
+                now while I work out the bugs. Support for more games, user accounts, and multiple leagues will be coming in future releases. 
+            </p>
+        </main>
+    </div>
     
+    <footer class="h-24 bg-gray-900 py-2 flex flex-col justify-around">
+        <!-- <div class="flex justify-center items-center h-full w-64 mx-auto">
+            <img class="w-6" src="/img/logo_white.png" alt="int house logo">
+        </div> -->
+        <div class="flex justify-around text-sm w-32 mx-auto">
+            <a class="hover:text-gray-300" href="/">Home</a> 
+            <p class="text-sm text-gray-300">|</p>
+            <a class="hover:text-gray-300" href="/about">About</a> 
+        </div>
+        <div class="mx-auto">
+            <p class="text-sm">Version <span class="text-sm italic text-gray-400"><%= version %></span></p>
+        </div>
+    </footer>
 </body>
+
 </html>

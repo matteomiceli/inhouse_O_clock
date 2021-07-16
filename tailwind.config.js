@@ -15,7 +15,8 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         'league-bg': "url('/img/league_bg.jpg')",
-        'league-banner': "url('/img/league-banner.jpg')"
+        'league-banner': "url('/img/league-banner.jpg')",
+        'crown': "url('/img/logo_black.png')"
       }),
       fontFamily: {
         body: ['Noto Sans JP', 'sans-serif'],

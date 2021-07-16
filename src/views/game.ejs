@@ -8,57 +8,63 @@
     <title>Game Results</title>
 </head>
 <body class="bg-gray-800 text-white font-body">
-   <header class="navbar bg-int-blue w-screen py-2 px-4 flex justify-between items-center md:grid md:grid-rows-1 md:grid-cols-3 md:h-16 md:px-8">
-                <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8 md:max-h-10"></a>
-                <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-6 cursor-pointer md:invisible">
-                <nav class="absolute top-12 hidden right-0 bg-white rounded-l-xl h-64 w-4/6 p-6 px-10 sm:w-3/6 md:flex md:static md:bg-transparent md:w-full md:top-0 md:right-0 md:visible">
-                    <div class="flex flex-col h-full justify-around md:flex md:flex-row md:items-center md:justify-around md:w-full">
-                        <!-- <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:" href="/LoL">League of Legends</a> -->
-                        <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 py-2 px-4 w-full rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="/">Home</a>
-                        <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 py-2 px-4 w-full rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="#">About</a>
-                    </div>
-                </nav>
-            </header>
-    <main class="">
+  
+    <main class="full-screen">
+        <header class="navbar bg-int-blue w-screen py-2 px-4 flex justify-between items-center md:grid md:grid-rows-1 md:grid-cols-3 md:h-16 md:px-8">
+            <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8 md:max-h-10"></a>
+            <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-6 cursor-pointer md:invisible">
+            <nav class="absolute top-12 hidden right-0 bg-white rounded-l-xl h-64 w-4/6 p-6 px-10 sm:w-3/6 md:flex md:static md:bg-transparent md:w-full md:top-0 md:right-0 md:visible">
+                <div class="flex flex-col h-full justify-around md:flex md:flex-row md:items-center md:justify-around md:w-full">
+                    <!-- <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:" href="/LoL">League of Legends</a> -->
+                    <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 py-2 px-4 w-full rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="/">Home</a>
+                    <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 py-2 px-4 w-full rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="#">About</a>
+                </div>
+            </nav>
+        </header>
+
         <% if (game.gameData.winningTeam == 'red') { %>
             <h1 class="mt-12 text-5xl font-heading text-red-500 text-center">RED <span class="text-white">VICTORY</span></h1>
         <% } else { %>
             <h1 class="mt-12 text-5xl font-heading text-int-blue text-center">BLUE <span class="text-white">VICTORY</span></h1>
         <% } %>
-        <div class="mt-12 mx-4 rounded-xl p-4 bg-gray-900">
+        <div class="mt-12 mx-4 rounded-xl p-4 bg-gray-900 sm:w-4/5 sm:mx-auto md:w-4/6 lg:w-3/6">
            
              <div class="teams my-8 grid grid-cols-2 gap-3">
                 <!-- red team -->
                 <div class="red px-2">
-                    <h1 class="flex font-heading text-red-500 text-3xl mb-2 justify-center">
+                    <h1 class="flex font-heading text-white text-3xl mb-2 justify-center">
                         RED
                         <% if (game.redScore > 0) { %>
-                            <span class="font-body text-green-400 text-base ml-1">+<%= game.redScore %></span>
+                            <p class="flex items-center font-body font-bold text-white bg-green-400 h-2/5 px-1.5 rounded-lg text-base ml-2">+<%= game.redScore %></p>
                         <% } else { %>
-                            <span class="font-body text-red-400 text-base ml-1"><%= game.redScore %></span>
+                            <p class="flex items-center font-body font-bold text-white bg-red-400 h-2/5 px-1.5 rounded-lg text-base ml-2"><%= game.redScore %></p>
                         <% } %>
                     </h1>
-                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.top.alias %>"><%= game.gameData.red.top.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.top.score) + parseInt(game.redScore) %></span></p>
-                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.jung.alias %>"><%= game.gameData.red.jung.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.jung.score) + parseInt(game.redScore) %></span></p>
-                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.mid.alias %>"><%= game.gameData.red.mid.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.mid.score) + parseInt(game.redScore) %></span></p>
-                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.adc.alias %>"><%= game.gameData.red.adc.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.adc.score) + parseInt(game.redScore) %></span></p>
-                    <p class="text-red-500 text-sm hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.sup.alias %>"><%= game.gameData.red.sup.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.red.sup.score) + parseInt(game.redScore) %></span></p>
+                    <div class="mx-auto flex flex-col w-36">
+                        <h3 class="text-red-500 hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.top.alias %>"><%= game.gameData.red.top.alias %></a><span class="text-white"> <%= parseInt(game.gameData.red.top.score) + parseInt(game.redScore) %></span></h3>
+                        <h3 class="text-red-500 hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.jung.alias %>"><%= game.gameData.red.jung.alias %></a><span class="text-white"> <%= parseInt(game.gameData.red.jung.score) + parseInt(game.redScore) %></span></h3>
+                        <h3 class="text-red-500 hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.mid.alias %>"><%= game.gameData.red.mid.alias %></a><span class="text-white"> <%= parseInt(game.gameData.red.mid.score) + parseInt(game.redScore) %></span></h3>
+                        <h3 class="text-red-500 hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.adc.alias %>"><%= game.gameData.red.adc.alias %></a><span class="text-white"> <%= parseInt(game.gameData.red.adc.score) + parseInt(game.redScore) %></span></h3>
+                        <h3 class="text-red-500 hover:text-red-400"><a href="/LoL/player/<%- game.gameData.red.sup.alias %>"><%= game.gameData.red.sup.alias %></a><span class="text-white"> <%= parseInt(game.gameData.red.sup.score) + parseInt(game.redScore) %></span></h3>
+                    </div>
                 </div>
                 <!-- blue team -->
                 <div class="blue px-2">
-                    <h1 class="flex font-heading text-int-blue text-3xl mb-2 justify-center">
+                    <h1 class="flex font-heading text-white text-3xl mb-2 justify-center">
                         BLUE
                         <% if (game.blueScore > 0) { %>
-                            <span class="font-body text-green-400 text-base ml-1">+<%= game.blueScore %></span>
+                            <span class="flex items-center font-body font-bold text-white bg-green-400 h-2/5 px-1.5 rounded-lg text-base ml-2">+<%= game.blueScore %></span>
                         <% } else { %>
-                            <span class="font-body text-red-400 text-base ml-1"><%= game.blueScore %></span>
+                            <span class="flex items-center font-body font-bold text-white bg-red-400 h-2/5 px-1.5 rounded-lg text-base ml-2"><%= game.blueScore %></span>
                         <% } %>
                     </h1>
-                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.top.alias %>"><%= game.gameData.blue.top.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.top.score) + parseInt(game.blueScore) %></span></p>
-                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.jung.alias %>"><%= game.gameData.blue.jung.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.jung.score) + parseInt(game.blueScore) %></span></p>
-                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.mid.alias %>"><%= game.gameData.blue.mid.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.mid.score) + parseInt(game.blueScore) %></span></p>
-                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.adc.alias %>"><%= game.gameData.blue.adc.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.adc.score) + parseInt(game.blueScore) %></span></p>
-                    <p class="text-int-blue text-sm hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.sup.alias %>"><%= game.gameData.blue.sup.alias %></a><span class="text-white"> - <%= parseInt(game.gameData.blue.sup.score) + parseInt(game.blueScore) %></span></p>
+                    <div class="mx-auto flex flex-col w-36">
+                        <p class="text-int-blue hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.top.alias %>"><%= game.gameData.blue.top.alias %></a><span class="text-white">  <%= parseInt(game.gameData.blue.top.score) + parseInt(game.blueScore) %></span></p>
+                        <p class="text-int-blue hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.jung.alias %>"><%= game.gameData.blue.jung.alias %></a><span class="text-white">  <%= parseInt(game.gameData.blue.jung.score) + parseInt(game.blueScore) %></span></p>
+                        <p class="text-int-blue hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.mid.alias %>"><%= game.gameData.blue.mid.alias %></a><span class="text-white">  <%= parseInt(game.gameData.blue.mid.score) + parseInt(game.blueScore) %></span></p>
+                        <p class="text-int-blue hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.adc.alias %>"><%= game.gameData.blue.adc.alias %></a><span class="text-white">  <%= parseInt(game.gameData.blue.adc.score) + parseInt(game.blueScore) %></span></p>
+                        <p class="text-int-blue hover:text-int-blue-light"><a href="/LoL/player/<%- game.gameData.blue.sup.alias %>"><%= game.gameData.blue.sup.alias %></a><span class="text-white">  <%= parseInt(game.gameData.blue.sup.score) + parseInt(game.blueScore) %></span></p>
+                    </div>
                 </div>
              </div>
              <% let date = new Date(game.date)%>
@@ -66,8 +72,18 @@
         </div>
             
     </main>
-
-    
-    
+    <footer class="h-24 bg-gray-900 py-2 flex flex-col justify-around">
+        <!-- <div class="flex justify-center items-center h-full w-64 mx-auto">
+            <img class="w-6" src="/img/logo_white.png" alt="int house logo">
+        </div> -->
+        <div class="flex justify-around text-sm w-32 mx-auto">
+            <a class="hover:text-gray-300" href="/">Home</a> 
+            <p class="text-sm text-gray-300">|</p>
+            <a class="hover:text-gray-300" href="/about">About</a> 
+        </div>
+        <div class="mx-auto">
+            <p class="text-sm">Version <span class="text-sm italic text-gray-400"><%= version %></span></p>
+        </div>
+    </footer>
 </body>
 </html>

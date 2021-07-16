@@ -29,7 +29,7 @@ router.get("/new-game", async (req, res) => {
         }
         let players = data;
         // res.json(data)
-        res.render("new-game", { players: players });
+        res.render("new-game", { players: players, version: version });
     })
 });
 
@@ -46,7 +46,7 @@ router.post("/new-game", async (req, res) => {
         let score = data['posRatings'][reqPosition];
 
 
-        res.send({ alias: reqPlayer, score: score });
+        res.send({ alias: reqPlayer, score: score, version: version });
     })
 });
 
@@ -61,7 +61,7 @@ router.post('/game-results', async (req, res) => {
 
     updatePlayerScores(gameObject);
 
-    res.render('game', { game: gameObject });
+    res.render('game', { game: gameObject, version: version });
 })
 
 router.get('/player/:alias', async (req, res) => {
@@ -75,7 +75,7 @@ router.get('/player/:alias', async (req, res) => {
         }
         let player = data[0]
        
-        res.render('player', { player: player, newPlayer: false })
+        res.render('player', { player: player, newPlayer: false, version: version })
     });
 });
 
@@ -98,13 +98,13 @@ router.post("/player", async (req, res) => {
     });
 
     await newPlayer.save();
-    res.render('player', { player: newPlayer, newPlayer: true });
+    res.render('player', { player: newPlayer, newPlayer: true, version: version });
     return;
 })
 
 
 router.get("/new-player", (req, res) => {
-    res.render('new-player');
+    res.render('new-player', { version: version });
 })
 
 // set param to take in game object (for match history implementation in the future)
@@ -168,7 +168,7 @@ router.get('/game', (req, res) => {
         }
     }
 
-    res.render('game', { game: gameObj });
+    res.render('game', { game: gameObj, version: version });
 })
 
 module.exports = router;

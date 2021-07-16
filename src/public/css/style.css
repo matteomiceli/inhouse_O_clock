@@ -5,6 +5,10 @@
     height: calc(100% - 48px);
 }
 
+.full-screen {
+    min-height: calc(100vh - 96px);
+}
+
 .hero {
     height: 384px;
     background: radial-gradient(125% 125% at 15% 0%, #2583FF 0%, #A148CB 100%);

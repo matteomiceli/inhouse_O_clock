@@ -6,6 +6,10 @@
   height: calc(100% - 48px);
 }
 
+.full-screen {
+  min-height: calc(100vh - 96px);
+}
+
 .hero {
   height: 384px;
   background: radial-gradient(125% 125% at 15% 0%, #2583FF 0%, #A148CB 100%);
@@ -18058,6 +18062,10 @@ video {
 
 .bg-league-banner{
   background-image: url('/img/league-banner.jpg');
+}
+
+.bg-crown{
+  background-image: url('/img/logo_black.png');
 }
 
 .from-transparent{
@@ -50381,6 +50389,10 @@ video {
     background-image: url('/img/league-banner.jpg');
   }
 
+  .sm\:bg-crown{
+    background-image: url('/img/logo_black.png');
+  }
+
   .sm\:from-transparent{
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -82272,6 +82284,10 @@ video {
 
   .md\:bg-league-banner{
     background-image: url('/img/league-banner.jpg');
+  }
+
+  .md\:bg-crown{
+    background-image: url('/img/logo_black.png');
   }
 
   .md\:from-transparent{
@@ -114167,6 +114183,10 @@ video {
     background-image: url('/img/league-banner.jpg');
   }
 
+  .lg\:bg-crown{
+    background-image: url('/img/logo_black.png');
+  }
+
   .lg\:from-transparent{
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -146060,6 +146080,10 @@ video {
     background-image: url('/img/league-banner.jpg');
   }
 
+  .xl\:bg-crown{
+    background-image: url('/img/logo_black.png');
+  }
+
   .xl\:from-transparent{
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -177951,6 +177975,10 @@ video {
 
   .\32xl\:bg-league-banner{
     background-image: url('/img/league-banner.jpg');
+  }
+
+  .\32xl\:bg-crown{
+    background-image: url('/img/logo_black.png');
   }
 
   .\32xl\:from-transparent{
