@@ -5,70 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="/img/favicon.png"/>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="/js/menu.js"></script>
     <title>Player Created</title>
 </head>
 <body class="bg-gray-800 text-white font-body">
-    <header class="navbar bg-int-blue w-screen py-2 px-4 flex justify-between items-center md:grid md:grid-rows-1 md:grid-cols-3 md:h-16 md:px-8">
-        <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8 md:max-h-10"></a>
-        <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-6 cursor-pointer md:invisible">
-        <nav class="absolute top-12 hidden right-0 bg-white rounded-l-xl h-2/5 w-4/6 p-6 md:flex md:static md:bg-transparent md:w-full md:top-0 md:right-0 md:visible">
-            <div class="flex flex-col h-full justify-around md:flex md:flex-row md:items-center md:justify-around md:w-full">
-                <!-- <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:" href="/LoL">League of Legends</a> -->
-                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200" href="#">About</a>
-                <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200" href="/">Home</a>
-            </div>
-        </nav>
-    </header>
-    <main class="">
-        <% if (newPlayer) { %>
-            <div class="bg-green-500 py-2 mt-6 rounded mx-4">
-                <p class="text-white italic font-bold text-center">Player successfully created!</p>
-            </div>
-        <% } %>
-        <div class="mt-16 mx-4 rounded-xl p-4 bg-gray-900 md:mx-auto md:w-4/6 lg:w-3/6 md:p-8">
-            <h1 class="text-3xl font-heading text-white md:text-4xl"> <%= player.alias %> </h1> 
-            <h2 class="text-xl text-gray-400 font-bold mb-8 md:text-2xl md:mb-12"> <%= player.name %> </h2> 
-            
-            <div class="flex justify-between"> 
-                <div class="flex flex-col items-center w-full mr-6">
-                    <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Top_icon.svg" alt="top icon">
-                    <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.top %></p>
+    <div class="full-screen">
+        <header class="navbar bg-int-blue w-full py-2 px-4 flex justify-between items-center md:grid md:grid-rows-1 md:grid-cols-3 md:h-16 md:px-8">
+            <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8 md:max-h-10"></a>
+            <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-6 cursor-pointer md:invisible">
+            <nav class="absolute top-12 hidden right-0 bg-white h-auto w-full p-6 px-16 rounded-b-xl shadow-lg md:shadow-none md:flex md:static md:bg-transparent md:w-full md:top-0 md:right-0 md:visible">
+                <div class="flex flex-col h-full w-full justify-around md:flex md:flex-row md:items-center md:justify-around md:w-full">
+                    <!-- <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:" href="/LoL">League of Legends</a> -->
+                    <a class="text-lg font-body text-center font-bold text-int-blue transition-all ease-in-out duration-300 py-3 px-4 w-full rounded-md hover:bg-int-blue hover:text-white my-2 md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="/">Home</a>
+                    <a class="text-lg font-body text-center font-bold text-int-blue transition-all ease-in-out duration-300 py-3 px-4 w-full rounded-md hover:bg-int-blue hover:text-white my-2 md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="/about">About</a>
                 </div>
-                <div class="flex flex-col items-center w-full mr-6">
-                    <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Jungle_icon.svg" alt="jungle icon"> 
-                    <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.jung %> </p>
+            </nav>
+        </header>
+        <main class="">
+            <% if (newPlayer) { %>
+                <div class="bg-green-500 py-2 mt-6 rounded mx-4">
+                    <p class="text-white italic font-bold text-center">Player successfully created!</p>
                 </div>
-                <div class="flex flex-col items-center w-full mr-6">
-                    <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Middle_icon.svg" alt="middle icon"> 
-                    <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.mid %></p>
+            <% } %>
+            <div class="mt-16 mx-4 rounded-xl p-4 bg-gray-900 md:mx-auto md:w-4/6 lg:w-3/6 md:p-8">
+                <h1 class="text-3xl font-heading text-white md:text-4xl"> <%= player.alias %> </h1> 
+                <h2 class="text-xl text-gray-400 font-bold mb-8 md:text-2xl md:mb-12"> <%= player.name %> </h2> 
+                
+                <div class="flex justify-between"> 
+                    <div class="flex flex-col items-center w-full mr-6">
+                        <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Top_icon.svg" alt="top icon">
+                        <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.top %></p>
+                    </div>
+                    <div class="flex flex-col items-center w-full mr-6">
+                        <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Jungle_icon.svg" alt="jungle icon"> 
+                        <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.jung %> </p>
+                    </div>
+                    <div class="flex flex-col items-center w-full mr-6">
+                        <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Middle_icon.svg" alt="middle icon"> 
+                        <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.mid %></p>
+                    </div>
+                    <div class="flex flex-col items-center w-full mr-6">
+                        <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Bot_icon.svg" alt="adc icon"> 
+                        <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.adc %></p>
+                    </div>
+                    <div class="flex flex-col items-center w-full">
+                        <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Support_icon.svg" alt="support icon"> 
+                        <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.sup %></p>
+                    </div>
                 </div>
-                <div class="flex flex-col items-center w-full mr-6">
-                    <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Bot_icon.svg" alt="adc icon"> 
-                    <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.adc %></p>
-                </div>
-                <div class="flex flex-col items-center w-full">
-                    <img class="w-8 flex-grow mb-1 md:w-10 md:mb-4" src="/img/positions/Support_icon.svg" alt="support icon"> 
-                    <p class="text-xl font-bold text-blue-100 md:text-2xl"><%= player.posRatings.sup %></p>
-                </div>
-            </div>
-    
-        </div>
         
-        <div class="mx-4 rounded-xl p-4 my-6 bg-gray-900 md:mx-auto md:w-4/6 lg:w-3/6">
-            <div class="flex justify-between">
-                <h1 class="text-xl font-body text-white font-bold md:text-2xl">Career</h1> 
-                <div class="flex">
-                    <p class="text-lg justify-end md:text-2xl">W: <span class="text-green-300"><%= player.wins %></span></p>
-                    <p class="text-lg justify-end ml-3 md:text-2xl">L: <span class="text-red-300"><%= player.losses %></span></p>
-                </div>
             </div>
-            <!-- add match history -->
-        </div>
-        <% if (newPlayer) { %>
-            <a class="mx-auto mt-12 flex items-center justify-around bg-int-blue w-48 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-100 ease-in-out" href="/LoL/new-player">Add Another Player</a>
-        <% } %>
             
-    </main>
+            <div class="mx-4 rounded-xl p-4 my-6 bg-gray-900 md:mx-auto md:w-4/6 lg:w-3/6">
+                <div class="flex justify-between">
+                    <h1 class="text-xl font-body text-white font-bold md:text-2xl">Career</h1> 
+                    <div class="flex">
+                        <p class="text-lg justify-end md:text-2xl">W: <span class="text-green-300"><%= player.wins %></span></p>
+                        <p class="text-lg justify-end ml-3 md:text-2xl">L: <span class="text-red-300"><%= player.losses %></span></p>
+                    </div>
+                </div>
+                <!-- add match history -->
+            </div>
+            <% if (newPlayer) { %>
+                <a class="mx-auto mt-12 flex items-center justify-around bg-int-blue w-48 rounded-lg p-2 hover:bg-int-blue-light transition-colors duration-100 ease-in-out" href="/LoL/new-player">Add Another Player</a>
+            <% } %>
+                
+        </main>
+    </div>
+    <footer class="h-24 bg-gray-900 py-2 flex flex-col justify-around">
+        <!-- <div class="flex justify-center items-center h-full w-64 mx-auto">
+            <img class="w-6" src="/img/logo_white.png" alt="int house logo">
+        </div> -->
+        <div class="flex justify-around text-sm w-32 mx-auto">
+            <a class="hover:text-gray-300" href="/">Home</a> 
+            <p class="text-sm text-gray-300">|</p>
+            <a class="hover:text-gray-300" href="/about">About</a> 
+        </div>
+        <div class="mx-auto">
+            <p class="text-sm">Version <span class="text-sm italic text-gray-400"><%= version %></span></p>
+        </div>
+    </footer>
+    
 
     
     
