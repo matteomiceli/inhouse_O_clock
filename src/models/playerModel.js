@@ -44,7 +44,7 @@ async function updatePlayerScores(gameObject) {
         await Player.findOneAndUpdate({ alias: redTeam.adc.alias }, {$set:{ 'posRatings.adc': adcScoreRed }, $inc: { wins: 1 }})
 
         let supScoreRed = (parseInt(redTeam.sup.score) + redScore).toString(); 
-        await Player.findOneAndUpdate({ alias: redTeam.sup.alias }, {$set:{ 'posRatings.adc': supScoreRed }, $inc: { wins: 1 }})
+        await Player.findOneAndUpdate({ alias: redTeam.sup.alias }, {$set:{ 'posRatings.sup': supScoreRed }, $inc: { wins: 1 }})
         
         // blue team [losers]
         let topScoreBlu = (parseInt(blueTeam.top.score) + blueScore).toString(); 
