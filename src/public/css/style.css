@@ -14,6 +14,10 @@
     background: radial-gradient(125% 125% at 15% 0%, #2583FF 0%, #A148CB 100%);
 }
 
+.nav-active {
+    
+}
+
 @media only screen and (min-width: 768px) {
     nav {
         display: flex !important;
