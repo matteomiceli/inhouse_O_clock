@@ -5,7 +5,7 @@ const { Player, updatePlayerScores } = require('../models/playerModel');
 const Game = require('../models/gameModel');
 const rating = require('../controllers/scoreAdjustController');
 const { check, validationResult  } = require('express-validator');
-const createGameDataObject = require('../controllers/gameController');
+const createGameDataObject = require('../controllers/gameObjectController');
 
 
 router.get('/', async (req, res) => {
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         // res.json(data)
         res.render("LoL", { players: players, version: version });
     });
-});
+}); 
 
 // game creation
 router.get("/new-game", async (req, res) => {
