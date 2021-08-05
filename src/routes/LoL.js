@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
             return;
         }
         let players = data;
+        console.log(players)
         // res.json(data)
         res.render("LoL", { players: players, version: version });
     });
