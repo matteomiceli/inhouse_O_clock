@@ -14,12 +14,11 @@ router.get('/', async (req, res) => {
             console.log(err);
             return;
         }
-        let players = data;
-        console.log(playerRankController(players));
+        const players = data;
+        const sortedPlayers = playerRankController(players);
 
-        // console.log(players) // [{ player object }, ...]
         // res.json(data)
-        res.render("LoL", { players: players, version: version });
+        res.render("LoL", { players: sortedPlayers, version: version });
     });
 }); 
 

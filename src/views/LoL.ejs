@@ -59,16 +59,38 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% for(i=0; i < players.length; i++) { %>
+                            <tr> <td class="h-2"></td></tr>
+                            <tr class="text-sm sm:text-lg lg:text-xl border-b-2 border-solid border-white"> <td></td><td class="h-8 pb-1">Ranked</td></tr>
+                            <tr> <td class="h-4"></td></tr>
+                            <% for(i=0; i < players.ranked.length; i++) { %>
                                 <tr class="text-sm sm:text-lg lg:text-xl">
-                                  <td align="right" class="text-white pr-2 md:pr-3"><%= `${i+1}.` %></td>
-                                  <td align="left" class="text-blue-300 hover:text-blue-200 py-1"><a href="/LoL/player/<%- players[i].alias %>"><%= players[i].alias %></a></td>
-                                  <td align="right" class="text-gray-300"><%= players[i].posRatings.top %></td>
-                                  <td align="right" class="text-gray-300"><%= players[i].posRatings.jung %></td>
-                                  <td align="right" class="text-gray-300"><%= players[i].posRatings.mid %></td>
-                                  <td align="right" class="text-gray-300"><%= players[i].posRatings.adc%></td>
-                                  <td align="right" class="text-gray-300"><%= players[i].posRatings.sup %></td>
-                                  <td align="right" class="text-gray-300"><span class="text-green-300"><%= players[i].wins %></span> / <span class="text-red-300"><%= players[i].losses %></span></td>
+                                <% if (i + 1 === 1) { %>
+                                    <td align="right" class="h-8"><img src="/img/king.svg" class="h-3 pr-2 md:pr-3" alt="king of the hill"></td>
+                                <% } else { %>
+                                    <td align="right" class="text-white pr-2 md:pr-3"><%= `${i+1}.` %></td>
+                                <% } %>
+                                  <td align="left" class="text-blue-300 hover:text-blue-200 py-1"><a href="/LoL/player/<%- players.ranked[i].alias %>"><%= players.ranked[i].alias %></a></td> 
+                                  <td align="right" class="text-gray-300"><%= players.ranked[i].posRatings.top %></td>
+                                  <td align="right" class="text-gray-300"><%= players.ranked[i].posRatings.jung %></td>
+                                  <td align="right" class="text-gray-300"><%= players.ranked[i].posRatings.mid %></td>
+                                  <td align="right" class="text-gray-300"><%= players.ranked[i].posRatings.adc%></td>
+                                  <td align="right" class="text-gray-300"><%= players.ranked[i].posRatings.sup %></td>
+                                  <td align="right" class="text-gray-300"><span class="text-green-300"><%= players.ranked[i].wins %></span> / <span class="text-red-300"><%= players.ranked[i].losses %></span></td>
+                                </tr>
+                            <% } %>
+                            <tr> <td class="h-4"></td></tr>
+                            <tr class="text-base sm:text-xl lg:text-2xl border-b-2 border-solid border-white"> <td></td><td class="h-2"></td></tr>
+                            <tr> <td class="h-4"></td></tr>
+                            <% for(i=0; i < players.unranked.length; i++) { %>
+                                <tr class="text-sm sm:text-lg lg:text-xl">
+                                  <td align="right" class="text-white pr-2 md:pr-3"></td>
+                                  <td align="left" class="text-blue-300 hover:text-blue-200 py-1"><a href="/LoL/player/<%- players.unranked[i].alias %>"><%= players.unranked[i].alias %></a></td>
+                                  <td align="right" class="text-gray-300"><%= players.unranked[i].posRatings.top %></td>
+                                  <td align="right" class="text-gray-300"><%= players.unranked[i].posRatings.jung %></td>
+                                  <td align="right" class="text-gray-300"><%= players.unranked[i].posRatings.mid %></td>
+                                  <td align="right" class="text-gray-300"><%= players.unranked[i].posRatings.adc%></td>
+                                  <td align="right" class="text-gray-300"><%= players.unranked[i].posRatings.sup %></td>
+                                  <td align="right" class="text-gray-300"><span class="text-green-300"><%= players.unranked[i].wins %></span> / <span class="text-red-300"><%= players.unranked[i].losses %></span></td>
                                 </tr>
                             <% } %>
                         </tbody>
