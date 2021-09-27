@@ -53,9 +53,8 @@ router.post("/new-game", async (req, res) => {
 });
 
 router.post('/game-results', async (req, res) => {
-    console.log(req.body);
     let gameData = createGameDataObject(req.body);
-    let gameObject = rating.getScoreAdjust(gameData);
+    let gameObject = rating.getScoreAdjust(gameData); //
     
     // archive game into game db
     const newGame = new Game(gameObject);
