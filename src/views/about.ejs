@@ -1,58 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/css/tailwind.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/png" href="/img/favicon.png" />
+        <script
+            defer
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        ></script>
+        <script defer src="/js/menu.js"></script>
+        <script defer src="/js/playerValidation.js"></script>
+        <title>About</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/tailwind.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/png" href="/img/favicon.png"/>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="/js/menu.js"></script>
-    <script defer src="/js/playerValidation.js"></script>
-    <title>About</title>
-</head>
+    <body class="bg-gray-800 text-white font-body">
+        <div class="full-screen">
+            <header
+                class="navbar bg-int-blue w-full py-2 px-4 flex justify-between items-center md:grid md:grid-rows-1 md:grid-cols-3 md:h-16 md:px-8"
+            >
+                <a href="/"
+                    ><img
+                        src="/img/logo_white.png"
+                        alt="int-house logo"
+                        class="max-h-8 md:max-h-10"
+                /></a>
+                <img
+                    src="/img/menu.svg"
+                    alt="menu icon"
+                    class="menu-icon w-6 cursor-pointer md:invisible"
+                />
+                <nav
+                    class="transition-all duration-500 top-12 ease-in-out absolute max-h-0 h-56 overflow-hidden left-0 bg-white w-full p-0 px-16 rounded-b-xl md:max-h-48 md:shadow-none md:flex md:static md:bg-transparent md:w-full md:top-0 md:right-0 md:visible"
+                >
+                    <div
+                        class="flex flex-col h-full w-full justify-around md:flex md:flex-row md:items-center md:justify-around md:w-full"
+                    >
+                        <!-- <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:" href="/LoL">League of Legends</a> -->
+                        <a
+                            class="text-lg font-body text-center font-bold text-int-blue transition-all ease-in-out duration-300 py-3 px-4 w-full rounded-md hover:bg-int-blue hover:text-white my-2 md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto"
+                            href="/"
+                            >Home</a
+                        >
+                        <a
+                            class="text-lg font-body text-center font-bold text-int-blue transition-all ease-in-out duration-300 py-3 px-4 w-full rounded-md hover:bg-int-blue hover:text-white my-2 md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto"
+                            href="/about"
+                            >About</a
+                        >
+                    </div>
+                </nav>
+            </header>
+            <main class="pt-16 w-5/6 mx-auto md:w-4/6 lg:w-3/6 h-full">
+                <img
+                    class="w-24 mx-auto"
+                    src="/img/logo_white.png"
+                    alt="int house logo"
+                />
+                <p class="mt-8 text-center text-lg font-bold">
+                    Compete against your friends in custom e-sports leagues!
+                </p>
+                <p class="mt-12 text-sm italic">
+                    Int House is an alpha prototype. It is meant to be a quick
+                    and easy way to create a private ranked ladder to make
+                    matchmaking and in-house tournaments easier to organize
+                    inside your gaming circle.
+                </p>
+                <p class="mt-4 text-sm italic">
+                    Currently, there is only support for one pool of players
+                    while I work out the bugs. I'm hoping to add support for
+                    more games, user accounts, and multiple leagues.
+                </p>
+            </main>
+        </div>
 
-<body class="bg-gray-800 text-white font-body">
-    <div class="full-screen">
-        <header class="navbar bg-int-blue w-full py-2 px-4 flex justify-between items-center md:grid md:grid-rows-1 md:grid-cols-3 md:h-16 md:px-8">
-            <a href="/"><img src="/img/logo_white.png" alt="int-house logo" class="max-h-8 md:max-h-10"></a>
-            <img src="/img/menu.svg" alt="menu icon" class="menu-icon w-6 cursor-pointer md:invisible">
-            <nav class="transition-all duration-500 top-12 ease-in-out absolute max-h-0 h-56 overflow-hidden left-0 bg-white w-full p-0 px-16 rounded-b-xl md:max-h-48 md:shadow-none md:flex md:static md:bg-transparent md:w-full md:top-0 md:right-0 md:visible">
-                <div class="flex flex-col h-full w-full justify-around md:flex md:flex-row md:items-center md:justify-around md:w-full">
-                    <!-- <a class="text-xl font-body font-bold text-int-blue transition-all ease-in-out duration-300 p-2 rounded-md hover:bg-int-blue hover:text-white md:text-white md:text-lg md:" href="/LoL">League of Legends</a> -->
-                    <a class="text-lg font-body text-center font-bold text-int-blue transition-all ease-in-out duration-300 py-3 px-4 w-full rounded-md hover:bg-int-blue hover:text-white my-2 md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="/">Home</a>
-                    <a class="text-lg font-body text-center font-bold text-int-blue transition-all ease-in-out duration-300 py-3 px-4 w-full rounded-md hover:bg-int-blue hover:text-white my-2 md:text-white md:text-lg md:py-2 md:px-4 md:hover:text-int-blue md:hover:bg-white md:duration-200 md:mx-2 md:w-auto" href="/about">About</a>
-                </div>
-            </nav>
-        </header>
-        <main class="pt-16 w-5/6 mx-auto md:w-4/6 lg:w-3/6 h-full">
-            <img class="w-24 mx-auto" src="/img/logo_white.png" alt="int house logo">
-            <p class="mt-8 text-center text-lg font-bold">
-                Compete against your friends in custom e-sports leagues!
-            </p>
-            <p class="mt-12 text-sm italic">
-                Int House is an alha prototype. It is meant to be a quick and easy way to create a private ranked ladder to make matchmaking and in-house tournaments easier to organize inside your gaming circle. 
-            </p>
-            <p class="mt-4 text-sm italic"> 
-                Currently, there is only support for one pool of players while I work out the bugs. I'm hoping to add support for more games, user accounts, and multiple leagues. 
-            </p>
-        </main>
-    </div>
-    
-    <footer class="h-24 bg-gray-900 py-2 flex flex-col justify-around">
-        <!-- <div class="flex justify-center items-center h-full w-64 mx-auto">
+        <footer class="h-24 bg-gray-900 py-2 flex flex-col justify-around">
+            <!-- <div class="flex justify-center items-center h-full w-64 mx-auto">
             <img class="w-6" src="/img/logo_white.png" alt="int house logo">
         </div> -->
-        <div class="flex justify-around text-sm w-32 mx-auto">
-            <a class="hover:text-gray-300" href="/">Home</a> 
-            <p class="text-sm text-gray-300">|</p>
-            <a class="hover:text-gray-300" href="/about">About</a> 
-        </div>
-        <div class="mx-auto">
-            <p class="text-sm">Version <span class="text-sm italic text-gray-400"><%= version %></span></p>
-        </div>
-    </footer>
-</body>
-
+            <div class="flex justify-around text-sm w-32 mx-auto">
+                <a class="hover:text-gray-300" href="/">Home</a>
+                <p class="text-sm text-gray-300">|</p>
+                <a class="hover:text-gray-300" href="/about">About</a>
+            </div>
+            <div class="mx-auto">
+                <p class="text-sm">
+                    Version
+                    <span class="text-sm italic text-gray-400"
+                        ><%= version %></span
+                    >
+                </p>
+            </div>
+        </footer>
+    </body>
 </html>

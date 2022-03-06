@@ -8,7 +8,7 @@ const gameSchema = new Schema({
     gameData: {
         winningTeam: String,
         red: {
-            top: { alias: String, score: String },
+            top: { alias: String, score: String }, 
             jung: { alias: String, score: String },
             mid: { alias: String, score: String },
             adc: { alias: String, score: String },
